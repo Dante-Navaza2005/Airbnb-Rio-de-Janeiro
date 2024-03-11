@@ -150,11 +150,11 @@ def histogram(main_dataframe_collumn) :
 
 #? Outliers above the upper limit represent luxury properties, which are not considered for the prediction model who's objective is to analyze common apparments, and thus should be removed. 
 
-def exclude_outliers(main_dataframe, collumn) :
-    amount_lines = main_dataframe.shape[0]
-    lower_limit, upper_limit = calculate_limits(main_dataframe[collumn])
-    main_dataframe = main_dataframe.loc[(main_dataframe[collumn] >= lower_limit) & (main_dataframe[collumn] <= upper_limit), :]
-    return main_dataframe, amount_lines - main_dataframe.shape[0]
+def exclude_outliers(main_df, collumn) :
+    amount_lines = main_df.shape[0]
+    lower_limit, upper_limit = calculate_limits(main_df[collumn])
+    main_df = main_df.loc[(main_df[collumn] >= lower_limit) & (main_df[collumn] <= upper_limit), :]
+    return main_df, amount_lines - main_df.shape[0]
 
 for collumn in ['price', 'extra_people'] :
     main_dataframe, amount_removed_lines = exclude_outliers(main_dataframe, collumn)
@@ -173,14 +173,24 @@ def bar_graph(main_dataframe_collumn) :
     ax.set_xlim(calculate_limits(main_dataframe_collumn))
     plt.show()
 
+#? The 'guests_included' column will be disregarded from the model's analysis due to its significant skew towards a single value, specifically 1, indicating a maximum limit of one guest per residency. Removing this column from the analysis as a whole is essential as excluding only the outliers could significantly influence the final result. Moreover, this concentration likely stems from data entry errors, as typical housing accommodations should accommodate more than one person.
 
-for collumn in ['host_listings_count','accommodates', 'bathrooms', 'beds','bedrooms', 'guests_included', 'minimum_nights', 'maximum_nights'] :
+#*main_dataframe.drop('guests_included')
+
+#? The 'maximum_nights' column will also be diregarded from the model's analysis as not only it doesn't contribute signficiantly to a variation in the price, but also a large amount of the data is in the collumn 0, which represents that most users didn't fill out this area when searching for a residence.
+    
+for collumn in ['host_listings_count','accommodates', 'bathrooms', 'beds','bedrooms', 'minimum_nights'] :
     main_dataframe, amount_removed_lines = exclude_outliers(main_dataframe, collumn)
     print(f"{amount_removed_lines} lines were removed from {collumn}")
     box_plot(main_dataframe[collumn])
     bar_graph(main_dataframe[collumn])
 
-#? The outliers of the collumns '...' were not removed because they contain relevant data for the prediction model.
+plt.figure(figsize=(15,5))
+sns.barplot(x = main_dataframe['guests_included'].value_counts().index, y = main_dataframe['guests_included'].value_counts())
+plt.show()
+
+
+
 
 #! 8) ENCODING TO ALLOW FOR MACHINE LEARNING
 
