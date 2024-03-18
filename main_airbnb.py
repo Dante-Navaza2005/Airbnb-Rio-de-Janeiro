@@ -340,19 +340,21 @@ def analise_model(prediction, y_test) :
 
 #? setting up the y and x variables
 
-y, x = (main_dataframe_coded['price'], main_dataframe_coded.drop('price', axis=1))
+###y, x = (main_dataframe_coded['price'], main_dataframe_coded.drop('price', axis=1))
 
 #? Splitting the data into training and testing data
 
-x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=20)
+###x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=20)
 
 #? Now we will test the three models mentioned previously
 
-models_list = ["Linear Regression", "Random Forest Regressor", "Extra Trees"]
 
-linear_model, random_forest_model, extra_trees_model = (LinearRegression(), RandomForestRegressor(), ExtraTreesRegressor())
+###linear_model, random_forest_model, extra_trees_model = (LinearRegression(), RandomForestRegressor(), ExtraTreesRegressor())
+
 ###* DEPOIS REATIVAR!!!!!!!!!!!!!
 """
+models_list = ["Linear Regression", "Random Forest Regressor", "Extra Trees"]
+
 for i, model in enumerate(tqdm([linear_model, random_forest_model , extra_trees_model])):
     model.fit(x_train, y_train)
     prediction = model.predict(x_test)
@@ -360,11 +362,13 @@ for i, model in enumerate(tqdm([linear_model, random_forest_model , extra_trees_
     analise_model(prediction, y_test)
 """
 
+
 """
 extra_trees_model.fit(x_train, y_train)
 prediction = extra_trees_model.predict(x_test)
 analise_model(prediction, y_test)
 """
+
 
 
 #? After analyzing the results of each model, the Extra Trees model was chosen to be the most effective. 
@@ -372,25 +376,43 @@ analise_model(prediction, y_test)
 
 #! 11) ANALYZE THE BEST MODEL
 
+"""
 feature_importance_dict = dict(zip(x_train.columns, extra_trees_model.feature_importances_ ))
 sorted_feature_importance_dict = sorted(feature_importance_dict.items(), key=lambda x:x[1])
 feature_importance_dict = dict(sorted_feature_importance_dict)
+"""
+
+#? ADD COMMENTS AND REVIEW SOME
+
+feature_importance_dict = {'is_business_travel_ready': 0.0, 'room_type_Hotel room': 0.0002727898640424234, 'property_type_Hostel': 0.000640640517214526, 'property_type_Guest suite': 0.0006764362618787124, 'cancellation_policy_strict': 0.0008608328422731167, 'property_type_Guesthouse': 0.0009140416040177464, 'property_type_Bed and breakfast': 0.0013537309527822201, 'room_type_Shared room': 0.0019571428650418136, 'property_type_Loft': 0.002098655722697388, 'property_type_Serviced apartment': 0.002215809535464476, 'property_type_Other': 0.002301160188425858, 'bed_type_Other beds': 0.002571874385686655, 'bed_type_Real Bed': 0.0026255064654787884, 'room_type_Private room': 0.0044236787874356795, 'month': 0.004696734291672867, 'property_type_Condominium': 0.005460631338564232, 'property_type_House': 0.0071980988952384485, 'cancellation_policy_strict_14_with_grace_period': 0.007749524459205772, 'year': 0.011128311616447463, 'cancellation_policy_moderate': 0.012425010988506624, 'property_type_Apartment': 0.012715561703247483, 'host_is_superhost': 0.0132024149236506, 'cancellation_policy_flexible': 0.019773084621621077, 'instant_bookable': 0.02192708412724321, 'host_listings_count': 0.03933577178059692, 'beds': 0.052460331179030165, 'room_type_Entire home/apt': 0.0641091061708962, 'minimum_nights': 0.06536313177022905, 'bathrooms': 0.07084799760017975, 'accommodates': 0.07313136225049356, 'extra_people': 0.08616650593192585, 'Amount amenities': 0.08936396915174807, 'longitude': 0.10121190402940622, 'latitude': 0.1046257501408507, 'bedrooms': 0.11419541303680639}
 
 #? After observing the influence of each feature, we can observe the relevance of the localization as the longitude and latitude account for 20% of the data used in the calculations for the price. Also, the amount of ammenities bedrooms are another crucial factors in the price definition as the houses become more attractive to customers, therefore increasing its prices.
 
 #? However, other features such as 'is_buisness_travel_ready' have no relevance when calculating the final price, therefore we will experiment removing them to test if the model becomes more efficient.
 
-print(feature_importance_dict)
+###print(feature_importance_dict)
 
 
 #! 12) ADJUSTING AND IMPROVING THE BEST MODEL
 
-#? The 'is_business_travel_ready' collumn has no relevance when calculating the final price and is therefore removed, reducing the time and complexity of the model, while maintaining the accuracy
-main_dataframe_coded = main_dataframe_coded.drop('is_business_travel_ready', axis=1)
+#? We will remove all the features that have a importance lower than 0.007 in order to reduce the complexity of the model.
+for column in feature_importance_dict :
+    if feature_importance_dict[column] < 0.007 :
+        print(f"Removed {column}")
+        main_dataframe_coded = main_dataframe_coded.drop(column, axis=1)
 
 y, x = (main_dataframe_coded['price'], main_dataframe_coded.drop('price', axis=1))
 x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=20)
 
-extra_trees_model.fit(x_train, y_train)
-prediction = extra_trees_model.predict(x_test)
+final_model = ExtraTreesRegressor()
+
+final_model.fit(x_train, y_train)
+prediction = final_model.predict(x_test)
 analise_model(prediction, y_test)
+
+#? We can see that the model's accuracy barely changed after removing said features however its efficiency and simplicity has improved significantly (5 minutes to 2 minutes)
+
+feature_importance_dict_final = dict(zip(x_train.columns, final_model.feature_importances_))
+sorted_feature_importance_dict = sorted(feature_importance_dict_final.items(), key=lambda x:x[1])
+feature_importance_dict_final = dict(sorted_feature_importance_dict)
+print(feature_importance_dict_final)
