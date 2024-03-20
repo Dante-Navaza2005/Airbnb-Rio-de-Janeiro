@@ -381,10 +381,16 @@ print(feature_importance_dict)
 
 #? Due to the large amount of columns present in the model's analysis, we will remove all of the features that have an importance of less than 0.007. This will remove a large amount of redundant data in the model's analysis, making it considerably more efficient.
 
+#? After the removal, there will only be one 'room_type' column (the 'room_type_Entire home/apt'). In order to add more flexibility for the user when choosing a room type, we will keep the 'room_type_Private room' column which had the second highest importance.
+
+room_type_private_room = main_dataframe_coded['room_type_Private room']
+
 for column in feature_importance_dict :
     if feature_importance_dict[column] < 0.007 :
         print(f"Removed {column}")
         main_dataframe_coded = main_dataframe_coded.drop(column, axis=1)
+
+main_dataframe_coded['room_type_Private room'] = room_type_private_room
 
 y, x = (main_dataframe_coded['price'], main_dataframe_coded.drop('price', axis=1))
 x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=20)
