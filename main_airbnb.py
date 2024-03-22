@@ -60,7 +60,6 @@ months = {'jan': 1, 'fev': 2, 'mar': 3, 'abr': 4, 'mai': 5, 'jun': 6, 'jul': 7, 
 df_list = []
 
 
-
 #* concatenating all the databases into one while adding the month and year columns
 for file in dataset_folder.iterdir() :
     month = months[file.name[:3]]
