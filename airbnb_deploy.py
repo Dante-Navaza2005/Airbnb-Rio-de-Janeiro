@@ -15,6 +15,13 @@ x_lists = {'property_type': ['Apartment', 'House'], 'room_type': ['Entire home/a
 #? Now we will create another dictionary containing only the lists created by the dummy variables. This is so we can store the values the user enters. 
 list_values = {'property_type_Apartment' : 0, 'property_type_House' : 0, 'room_type_Entire home/apt' : 0, 'room_type_Private room' : 0, 'cancellation_policy_flexible' : 0, 'cancellation_policy_moderate' : 0, 'cancellation_policy_strict_14_with_grace_period' : 0}
 
+st.set_page_config(page_title="Airbnb Deployment", page_icon=":shark:")
+st.title("Airbnb Machine Learning Model Deployment")
+
+st.write("If you don't have the file of the model, download it [here](https://drive.google.com/file/d/1VMhrCh5l2neipciZF15Y1lBDS02lgeN5/view?usp=sharing)")
+
+final_model = st.file_uploader("Upload the model")
+
 #? Creating a button for each dictionary and updating the values after the user's input
 #? Some buttons such as the latitude and logitude, will have float values and others will have integer, we will adjust their values as needed.
 for item in x_numerical :
@@ -56,7 +63,7 @@ if preview_button :
     #? We will use the column order list to rearrange the columns in the dataframe
     x_value_dataframe = x_value_dataframe[column_order_list]
 
-    model = joblib.load("final_model.joblib")
+    model = joblib.load(final_model)
     prediction = model.predict(x_value_dataframe)
 
     st.write(f"The predicted value is R$ {prediction[0]:.2f}")
