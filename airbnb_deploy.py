@@ -22,13 +22,12 @@ st.title("Airbnb Machine Learning Model Deployment")
 
 st.write("If you don't have the file of the model, download it [here](https://drive.google.com/file/d/1VMhrCh5l2neipciZF15Y1lBDS02lgeN5/view?usp=sharing)")
 
-final_model_path = st.text_input("Enter the complete directory path of the model file")
+final_model_file = st.text_input("Enter the complete directory path of the model file")
 
 #? Creating a button for each dictionary and updating the values after the user's input
 #? Some buttons such as the latitude and logitude, will have float values and others will have integer, we will adjust their values as needed.
 
-if final_model_path and os.path.exists(final_model_path):
-    final_model_file = os.path.join(final_model_path, "final_model.joblib")
+if final_model_file and os.path.exists(final_model_file):
     for item in x_numerical :
         if item == 'latitude' or item == 'longitude' :
             value = st.number_input(f'{item}', step=0.000001, value=0.0, format="%.6f")
