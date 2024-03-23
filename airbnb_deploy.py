@@ -70,6 +70,8 @@ if preview_button :
 
     final_model = os.path.join(download_path, "final_model.joblib")
 
+    st.write(f"{final_model}")
+    
     model = joblib.load(final_model)
     prediction = model.predict(x_value_dataframe)
 
