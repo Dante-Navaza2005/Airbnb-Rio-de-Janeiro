@@ -66,7 +66,7 @@ if preview_button :
     x_value_dataframe = x_value_dataframe[column_order_list]
 
     # Get the current user's name
-    current_user = os.getlogin()
+    current_user = os.environ.get('USERNAME')
 
     # Construct the full path to the model file
     st.write(f"{current_user}")
