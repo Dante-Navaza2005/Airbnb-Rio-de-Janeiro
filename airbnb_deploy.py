@@ -2,6 +2,8 @@
 import pandas as pd
 import streamlit as st
 import joblib
+import os
+
 
 #* 5)  Create and attribute the buttons to the loading of the model
 
@@ -21,7 +23,10 @@ st.title("Airbnb Machine Learning Model Deployment")
 
 st.write("If you don't have the file of the model, download it [here](https://drive.google.com/file/d/1VMhrCh5l2neipciZF15Y1lBDS02lgeN5/view?usp=sharing)")
 
-final_model = st.file_uploader("Upload the model")
+user_home = os.path.expanduser("~")
+download_path = os.path.join(user_home, "Downloads")
+
+final_model = os.path.join(download_path, "final_model.joblib")
 
 #? Creating a button for each dictionary and updating the values after the user's input
 #? Some buttons such as the latitude and logitude, will have float values and others will have integer, we will adjust their values as needed.
