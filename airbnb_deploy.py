@@ -65,13 +65,16 @@ if preview_button :
     #? We will use the column order list to rearrange the columns in the dataframe
     x_value_dataframe = x_value_dataframe[column_order_list]
 
-    user_home = os.path.expanduser("~")
-    download_path = os.path.join(user_home, "Downloads")
+    # Get the current user's name
+    current_user = os.getlogin()
 
-    final_model = os.path.join(download_path, "final_model.joblib")
+    # Construct the full path to the model file
+    final_model_path = fr"C:\Users\{current_user}\Downloads\final_model.joblib"
+
+    final_model = os.path.join(final_model_path)
 
     st.write(f"{final_model}")
-    
+
     model = joblib.load(final_model)
     prediction = model.predict(x_value_dataframe)
 
