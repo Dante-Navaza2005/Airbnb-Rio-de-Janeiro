@@ -66,7 +66,7 @@ if preview_button :
     x_value_dataframe = x_value_dataframe[column_order_list]
 
     st.write(final_model + r"\final_model.joblib")
-    model = joblib.load(final_model + r"\final_model.joblib")
+    model = joblib.load(final_model + "\final_model.joblib")
     prediction = model.predict(x_value_dataframe)
 
 
