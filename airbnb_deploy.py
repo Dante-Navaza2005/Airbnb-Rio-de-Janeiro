@@ -69,11 +69,11 @@ if preview_button :
     current_user = os.getlogin()
 
     # Construct the full path to the model file
+    st.write(f"{current_user}")
     final_model_path = fr"C:\Users\{current_user}\Downloads\final_model.joblib"
 
     final_model = os.path.join(final_model_path)
 
-    st.write(f"{final_model}")
 
     model = joblib.load(final_model)
     prediction = model.predict(x_value_dataframe)
