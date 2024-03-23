@@ -21,7 +21,7 @@ st.title("Airbnb Machine Learning Model Deployment")
 
 st.write("If you don't have the file of the model, download it [here](https://drive.google.com/file/d/1VMhrCh5l2neipciZF15Y1lBDS02lgeN5/view?usp=sharing)")
 
-st.file_uploader("Upload your machine learning model", accept_multiple_files=False)
+st.text_input("Enter the complete path of the file of the model")
 
 #? Creating a button for each dictionary and updating the values after the user's input
 #? Some buttons such as the latitude and logitude, will have float values and others will have integer, we will adjust their values as needed.
