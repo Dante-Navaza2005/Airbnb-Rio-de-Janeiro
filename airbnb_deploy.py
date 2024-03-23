@@ -65,6 +65,7 @@ if preview_button :
     #? We will use the column order list to rearrange the columns in the dataframe
     x_value_dataframe = x_value_dataframe[column_order_list]
 
+    st.write(final_model + r"\final_model.joblib")
     model = joblib.load(final_model + r"\final_model.joblib")
     prediction = model.predict(x_value_dataframe)
 
