@@ -417,7 +417,7 @@ print(feature_importance_dict_final)
 x["Price"] = y
 x.to_csv("final_data.csv")
 
-joblib.dump(final_model, "final_model.joblib")
+joblib.dump(final_model, "final_model.joblib", compress = 3)
 
 #* 2) Choose the form to deploy the model (Microsite Flask, direct use Streamlit, .exe file Tkinter)
 
