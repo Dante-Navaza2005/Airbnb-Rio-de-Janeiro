@@ -74,4 +74,7 @@ if final_model_path and os.path.exists(final_model_path):
 
     st.write(f"The predicted value is R$ {prediction[0]:.2f}")
 
+else:
+    st.warning("Please enter a valid path for the model file.")
+
 #* 6)  Finish deployment
