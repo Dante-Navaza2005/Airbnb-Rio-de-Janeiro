@@ -2,6 +2,7 @@
 import pandas as pd
 import streamlit as st
 import joblib
+import os
 
 #* 5)  Create and attribute the buttons to the loading of the model
 
@@ -64,7 +65,7 @@ if preview_button :
     #? We will use the column order list to rearrange the columns in the dataframe
     x_value_dataframe = x_value_dataframe[column_order_list]
 
-    model = joblib.load(final_model)
+    model = joblib.load(os.path.join(final_model, "final_model.joblib"))
     prediction = model.predict(x_value_dataframe)
 
 
