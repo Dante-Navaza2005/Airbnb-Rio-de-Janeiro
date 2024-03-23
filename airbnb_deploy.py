@@ -2,8 +2,6 @@
 import pandas as pd
 import streamlit as st
 import joblib
-import os
-from pathlib import Path
 
 #* 5)  Create and attribute the buttons to the loading of the model
 
@@ -23,6 +21,7 @@ st.title("Airbnb Machine Learning Model Deployment")
 
 st.write("If you don't have the file of the model, download it [here](https://drive.google.com/file/d/1VMhrCh5l2neipciZF15Y1lBDS02lgeN5/view?usp=sharing)")
 
+st.file_uploader("Upload your model", path)
 
 #? Creating a button for each dictionary and updating the values after the user's input
 #? Some buttons such as the latitude and logitude, will have float values and others will have integer, we will adjust their values as needed.
@@ -64,13 +63,6 @@ if preview_button :
 
     #? We will use the column order list to rearrange the columns in the dataframe
     x_value_dataframe = x_value_dataframe[column_order_list]
-
-    #* 5
-    download_path = os.path.join(Path.home(),'Downloads')
-
-    final_model = os.path.join(download_path, "final_model.joblib")
-
-    st.write(f"{final_model}")
 
     model = joblib.load(final_model)
     prediction = model.predict(x_value_dataframe)
