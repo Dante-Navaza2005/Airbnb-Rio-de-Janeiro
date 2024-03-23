@@ -1,4 +1,3 @@
-
 #* 4)  Import streamlit and create the code
 import pandas as pd
 import streamlit as st
