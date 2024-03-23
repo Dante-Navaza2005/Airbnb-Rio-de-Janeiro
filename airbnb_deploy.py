@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st
 import joblib
 import os
-
+from pathlib import Path
 
 #* 5)  Create and attribute the buttons to the loading of the model
 
@@ -65,18 +65,16 @@ if preview_button :
     #? We will use the column order list to rearrange the columns in the dataframe
     x_value_dataframe = x_value_dataframe[column_order_list]
 
-    # Get the current user's name
-    current_user = os.environ.get('USERNAME')
+    #* 5
+    download_path = os.path.join(Path.home(),'Downloads')
 
-    # Construct the full path to the model file
-    st.write(f"{current_user}")
-    final_model_path = fr"C:\Users\{current_user}\Downloads\final_model.joblib"
+    final_model = os.path.join(download_path, "final_model.joblib")
 
-    final_model = os.path.join(final_model_path)
-
+    st.write(f"{final_model}")
 
     model = joblib.load(final_model)
     prediction = model.predict(x_value_dataframe)
+
 
     st.write(f"The predicted value is R$ {prediction[0]:.2f}")
 
