@@ -8,7 +8,7 @@
 
 ![1710067247291](image/README/1710067247291.png)
 
-![1710067326710](image/README/1710067326710.png)![1710069858470](image/README/1710069858470.png)
+![1710067326710](image/README/1710067326710.png)
 
 ![1710105981740](image/README/1710105981740.png) 10% of the lines were outliers and were removed of the price collumn
 

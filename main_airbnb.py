@@ -82,7 +82,6 @@ Furthermore, a rapid analysis of the data shows a significant number of redundan
     2) ID: these quantitative values are unnecessary and could interfere with the final results as they would also be calculated.
     2) Repeated columns: the data contains many columns that are repeated or very similar to each other, such as the date, state, and country.
     3) Any collumn that contains hyperlinks or free-form text: besides of not containing relevant data for the desired result, it could interfere with the prediction model.
-    4) If over 30% of the data is missing we will remove that collumn
 A excel file with the first 900 rows was generated in order to do a quick analysis of the data.    
 main_dataframe.head(900).to_csv('first_900_rows.csv', sep=';', index=False)
 """

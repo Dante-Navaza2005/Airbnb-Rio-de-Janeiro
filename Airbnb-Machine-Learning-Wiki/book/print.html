@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Airbnb-Machine-Learning-Wiki</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Explanation</li><li class="spacer"></li><li class="chapter-item expanded "><a href="src/1-Introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="src/1-Introduction/objective.html"><strong aria-hidden="true">1.1.</strong> Context and objective</a></li><li class="spacer"></li></ol></li><li class="chapter-item expanded "><li class="part-title">Getting Started</li><li class="chapter-item expanded "><a href="src/2-Importing-and-installing-libraries/index.html"><strong aria-hidden="true">2.</strong> Importing and installing libraries</a></li><li class="chapter-item expanded "><a href="src/3-Importing-and-consolidating-database/importing-and-consolidating-database.html"><strong aria-hidden="true">3.</strong> Importing and the consolidating databse</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Treating database</li><li class="chapter-item expanded "><a href="src/4-Reduce-excessive-columns/index.html"><strong aria-hidden="true">4.</strong> Steps underwent in treating the data</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="src/4-Reduce-excessive-columns/reduce-excessive-collumns.html"><strong aria-hidden="true">4.1.</strong> Reducing excessive amount of columns</a></li><li class="chapter-item expanded "><a href="src/4-Reduce-excessive-columns/treating-missing-values.html"><strong aria-hidden="true">4.2.</strong> Treating missing values</a></li><li class="chapter-item expanded "><a href="src/4-Reduce-excessive-columns/verify-data-types.html"><strong aria-hidden="true">4.3.</strong> Verifying data types of each collumn</a></li></ol></li><li class="chapter-item expanded "><a href="src/5-Treatment-of-outliers/index.html"><strong aria-hidden="true">5.</strong> Treatment of outliers</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Airbnb-Machine-Learning-Wiki</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="context-and-objective"><a class="header" href="#context-and-objective">Context and Objective</a></h1>
+<p>Airbnb allows anyone with a spare room or property of any type (apartment, house, chalet, inn, etc.) to list their property for rent on a daily basis.</p>
+<p>As a host, you create your profile and list your property. In this listing, hosts should provide a comprehensive description of the property to assist renters/travelers in choosing the best accommodation and to make their listing more appealing.</p>
+<p>There are numerous customizations available in the listing, ranging from minimum stay requirements, pricing, number of rooms, to cancellation policies, extra guest fees, identity verification requirements for renters, etc.</p>
+<h3 id="our-objective"><a class="header" href="#our-objective">Our Objective</a></h3>
+<p>To build a price prediction model that enables property owners to determine the appropriate daily rate for their property. Additionally, to assist renters in evaluating whether a listed property offers a competitive price compared to similar properties with similar characteristics.</p>
+<h3 id="available-resources-inspirations-and-credits"><a class="header" href="#available-resources-inspirations-and-credits">Available Resources, Inspirations, and Credits</a></h3>
+<p>The datasets were sourced from Kaggle: <a href="https://www.kaggle.com/datasets/allanbruno/airbnb-rio-de-janeiro">https://www.kaggle.com/datasets/allanbruno/airbnb-rio-de-janeiro</a>. Data spans from April 2018 to May 2020, with the exception of June 2018, which lacks data.</p>
+<p>Given the 50MB per file space restriction in GitHub Repositories, the datasets utilized in this project are accessible for download via this link: <a href="https://drive.google.com/file/d/1_RtxDTXtF3CGvioFi1_ophzLNmyguEHl/view?usp=sharing">https://drive.google.com/file/d/1_RtxDTXtF3CGvioFi1_ophzLNmyguEHl/view?usp=sharing</a>. Alternatively, you may procure the datasets directly from Kaggle. However, it's noteworthy that discrepancies may arise in results if the datasets have been updated subsequent to the project's inception.</p>
+<ul>
+<li>File names are in brazilian portuguese</li>
+<li>The datasets contain property prices and their respective characteristics for each month.</li>
+<li>Prices are listed in Brazilian Real (R$).</li>
+</ul>
+<h3 id="initial-expectations"><a class="header" href="#initial-expectations">Initial Expectations</a></h3>
+<ul>
+<li>Seasonality is expected to be a significant factor, as months like December tend to have higher prices in Rio de Janeiro.</li>
+<li>Property location is likely to have a substantial impact on pricing, given that location can drastically alter the characteristics of a place (e.g., safety, natural beauty, proximity to tourist attractions).</li>
+<li>Additional amenities may have a significant impact, considering the prevalence of older buildings and houses in Rio de Janeiro.</li>
+</ul>
+<p>We aim to explore the extent to which these factors influence pricing and identify any less intuitive yet crucial factors.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="installing-libraries"><a class="header" href="#installing-libraries">Installing libraries</a></h1>
+<p>Download the requirements.txt and in the command prompt run:</p>
+<pre><code>pip install requirements.txt
+</code></pre>
+<h1 id="importing-libraries"><a class="header" href="#importing-libraries">Importing libraries</a></h1>
+<pre><code class="language-python">#? for path management
+import os
+import pathlib
+import joblib
+#? for data manipulation
+import pandas as pd 
+import numpy as np
+#? for data visualization
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+import webbrowser
+#? for machine learning
+from sklearn.metrics import r2_score, root_mean_squared_error
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor, ExtraTreesRegressor
+from sklearn.model_selection import train_test_split
+
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="importing-and-consolidating-the-database"><a class="header" href="#importing-and-consolidating-the-database">Importing and consolidating the database</a></h1>
+<p>The dataset comprises 25 databases stored in separate tables. To facilitate data processing and facilitate machine analysis, a consolidated database termed "main_dataframe" was created by integrating all these databases. This integration process involved the utilization of the Python pandas library, wherein each database, stored as a CSV file, was imported individually and appended to an initially empty list named "df_list". Subsequently, the pandas function pd.concat() was employed to concatenate all individual dataframes into a singular cohesive dataset.</p>
+<p>Furthermore, each dataframe within the main_dataframe contains a column representing dates. However, the dates are inconsistently formatted strings. To address this inconsistency, an extraction process was implemented to isolate the month and year components from the dataframe names. These extracted components were then utilized to create corresponding columns within the main_dataframe, thus ensuring consistency and facilitating further analytical operations.</p>
+<pre><code class="language-python">dataset_folder = pathlib.Path('dataset')
+months = {'jan': 1, 'fev': 2, 'mar': 3, 'abr': 4, 'mai': 5, 'jun': 6, 'jul': 7, 'ago': 8, 'set': 9, 'out': 10, 'nov': 11, 'dez': 12}
+df_list = []
+
+
+#* concatenating all the databases into one while adding the month and year columns
+for file in dataset_folder.iterdir() :
+    month = months[file.name[:3]]
+
+    year = int(file.name[-8:].replace('.csv', ''))
+
+    df = pd.read_csv(file)
+    df['month'] = month  
+    df['year'] = year
+
+    df_list.append(df)
+
+main_dataframe = pd.concat(df_list)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><div style="break-before: page; page-break-before: always;"></div><h1 id="reducing-excessive-amount-of-columns"><a class="header" href="#reducing-excessive-amount-of-columns">Reducing excessive amount of columns</a></h1>
+<p>As there are a lot of columns, we are going to reduce the amount of columns to enhance the algorithm efficiency.</p>
+<p>Furthermore, a rapid analysis of the data shows a significant number of redundant columns in the data for the prediction model, leading to the removal of the following columns:</p>
+<ol>
+<li>Any collumn with unecessary data types that wont influence the final price such as images, verification methods, etc.</li>
+<li>ID: these quantitative values are unnecessary and could interfere with the final results as they would also be calculated.</li>
+<li>Repeated columns: the data contains many columns that are repeated or very similar to each other, such as the date, state, and country.</li>
+<li>Any collumn that contains hyperlinks or free-form text: besides of not containing relevant data for the desired result, it could interfere with the prediction model.</li>
+<li>If over 30% of the data is missing we will remove that collumn</li>
+</ol>
+<p>After this analisis we were left with the following collumns:</p>
+<pre><code class="language-python">filtered_columns = ['host_response_time','host_response_rate','host_is_superhost','host_listings_count','latitude','longitude','property_type','room_type','accommodates','bathrooms','bedrooms','beds','bed_type','amenities','price','security_deposit','cleaning_fee','guests_included','extra_people','minimum_nights','maximum_nights','number_of_reviews','review_scores_rating','review_scores_accuracy','review_scores_cleanliness','review_scores_checkin','review_scores_communication','review_scores_location','review_scores_value','instant_bookable','is_business_travel_ready','cancellation_policy','year','month']
+
+main_dataframe = main_dataframe.loc[:, filtered_columns]
+</code></pre>
+<p>A excel file with the first 900 rows was generated in order to do a quick analysis of the data.</p>
+<pre><code class="language-python">main_dataframe.head(900).to_csv('first_900_rows.csv', sep=';', index=False)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="treating-missing-values"><a class="header" href="#treating-missing-values">Treating missing values</a></h1>
+<p>Utilizing the command:</p>
+<pre><code class="language-python">print(base_airbnb.isnull().sum())
+</code></pre>
+<p>We can see the amount of null values in each column:</p>
+<p><img src="src%5C4-Reduce-excessive-columns/image/treating-missing-values/1712176606720.png" alt="1712176606720" /></p>
+<p>If over 30% of the data is missing we will remove that collumn to optimize the model . Upon visualizing the dataset, it became apparent that certain columns contain a substantial amount of null values. Columns with over 30% of missing data will be entirely discarded, while those with fewer null values will undergo null value removal to ensure data integrity.</p>
+<pre><code class="language-python">row_30_percent = main_dataframe.shape[0] * 0.3
+for collumn in main_dataframe :
+    if main_dataframe[collumn].isnull().sum() &gt;= row_30_percent :
+        main_dataframe = main_dataframe.drop(collumn, axis=1)
+</code></pre>
+<p>After removing said columns we were left with these:</p>
+<pre><code class="language-python">print(base_airbnb.isnull().sum())
+</code></pre>
+<p><img src="src%5C4-Reduce-excessive-columns/image/treating-missing-values/1712179151121.png" alt="1712179151121" /></p>
+<p>As there aren't a significant amount of null values left, we will remove them.</p>
+<pre><code class="language-python">main_dataframe = main_dataframe.dropna()
+</code></pre>
+<p>In the end, all columns left won't have any null values, effectively optimizing our dataset for further analysis, thereby maximizing the accuracy and reliability of our results.</p>
+<p><img src="src%5C4-Reduce-excessive-columns/image/treating-missing-values/1712179751324.png" alt="1712179751324" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="verifying-the-data-types-of-each-collumn"><a class="header" href="#verifying-the-data-types-of-each-collumn">Verifying the data types of each collumn</a></h1>
+<p>Following inspection the data types of each column, it is evident that the majority conform to their intended data types. However, the 'price' and 'extra people' columns are incorrectly represented as objects (strings) rather than integers as expected, necessitating a conversion to their appropriate data type.</p>
+<p>In order to observe the data types we utilized the following command:</p>
+<pre><code class="language-python">print(base_dataframe.dtypes)
+print('-'*60)
+print(base_dataframe.iloc[0])
+</code></pre>
+<p><img src="src%5C4-Reduce-excessive-columns/image/verify-data-types/1712180387610.png" alt="1712180387610" /></p>
+<p>Additionally, all data types of float64 and int64 will be converted to their 32-bit variants to optimize memory usage.</p>
+<pre><code class="language-python">for collumn in main_dataframe :
+    if main_dataframe[collumn].dtype == 'float64' :
+        main_dataframe[collumn] = main_dataframe[collumn].astype(np.float32)
+    elif main_dataframe[collumn].dtype == 'int64' :
+        main_dataframe[collumn] = main_dataframe[collumn].astype(np.int32)
+
+for collumn in ['price', 'extra_people'] :
+    main_dataframe[collumn] = main_dataframe[collumn].str.replace(',', '').str.replace('$', '').astype(np.float32, copy=False) #used np.float32 to reduce memory usage
+</code></pre>
+<p>After the conversions the 'price' and 'extra_people' columns were effectively converted to float32 alongside with all the other columns that were int64 or int32, who where converted to their 32 bit variants</p>
+<p><img src="src%5C4-Reduce-excessive-columns/image/verify-data-types/1712181195726.png" alt="1712181195726" /></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="exploratory-analysis-and-treatment-of-outliers-for-numerical-values"><a class="header" href="#exploratory-analysis-and-treatment-of-outliers-for-numerical-values">Exploratory analysis and treatment of outliers for numerical values</a></h1>
+<ul>
+<li>
+<p>We will essentially examine each feature to:</p>
+<ol>
+<li>Conduct a correlation analysis among the features to ascertain their interrelationships and determine whether to retain all features. Features exhibiting strong correlations to the extent that they provide redundant information to the model will be removed.</li>
+<li>Eliminate outliers (using a rule where values below Q1 - 1.5 * Interquartile Range and above Q3 + 1.5  Interquartile Range will be excluded). Interquartile Range (IQR) = Q3 - Q1.</li>
+<li>Verify if all features are relevant for our model or if any of them will not contribute and should be removed.</li>
+</ol>
+</li>
+<li>
+<p>We will begin with the columns of price (the ultimate target variable) and extra_people (also a monetary value). These are continuous numerical values.</p>
+</li>
+<li>
+<p>Next, we will analyze the columns of discrete numerical values (accommodates, bedrooms, guests_included, etc.).</p>
+</li>
+<li>
+<p>Finally, we will evaluate the text columns and determine which categories make sense to retain or discard.</p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
