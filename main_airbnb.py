@@ -135,7 +135,7 @@ for collumn in ['price', 'extra_people'] :
 #* Making a heatmap from the correlation coefficient
 plt.figure(figsize=(15,10))
 sns.heatmap(main_dataframe.corr(numeric_only=True), annot=True)
-###plt.show()
+plt.show()
 
 #? None of the correlation coefficients observed among the features reached a strength indicative of redundancy for the prediction model (excluding the coefficient of 1 present in the comparison of same features).
 
@@ -167,6 +167,8 @@ def exclude_outliers(main_df, collumn) :
     main_df = main_df.loc[(main_df[collumn] >= lower_limit) & (main_df[collumn] <= upper_limit), :]
     return main_df, amount_lines - main_df.shape[0]
 
+histogram(main_dataframe['maximum_nights'])
+
 for collumn in ['price', 'extra_people'] :
     main_dataframe, amount_removed_lines = exclude_outliers(main_dataframe, collumn)
 
@@ -183,6 +185,7 @@ def bar_graph(main_dataframe_collumn) :
     ax = sns.barplot(x = main_dataframe_collumn.value_counts().index, y = main_dataframe_collumn.value_counts())
     ax.set_xlim(calculate_limits(main_dataframe_collumn))
     plt.show()
+
 
 """
 The 'guests_included' column will be disregarded from the model's analysis due to its significant skew towards a single value, specifically 1, indicating a maximum limit of one guest per residency. 
