@@ -5,6 +5,7 @@ In order to perform a correlation analysis among the features we will create a h
 ```python
 #* Making a heatmap from the correlation coefficient
 plt.figure(figsize=(15,10))
+plt.subplots_adjust(bottom=0.264)
 sns.heatmap(main_dataframe.corr(numeric_only=True), annot=True)
 plt.show()
 ```

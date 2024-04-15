@@ -134,7 +134,9 @@ for collumn in ['price', 'extra_people'] :
 
 #* Making a heatmap from the correlation coefficient
 plt.figure(figsize=(15,10))
+plt.subplots_adjust(bottom=0.264)
 sns.heatmap(main_dataframe.corr(numeric_only=True), annot=True)
+
 plt.show()
 
 #? None of the correlation coefficients observed among the features reached a strength indicative of redundancy for the prediction model (excluding the coefficient of 1 present in the comparison of same features).
@@ -150,11 +152,13 @@ def calculate_limits(collumn) :
 #* Creating the graphs and removing outliers
 def box_plot(main_dataframe_collumn) :
     plt.figure(figsize=(15,5))
+    plt.subplots_adjust(bottom=0.3)
     sns.boxplot(x = main_dataframe_collumn)
     plt.show()
 
 def histogram(main_dataframe_collumn) :
     plt.figure(figsize=(15, 5))
+    plt.subplots_adjust(bottom=0.3)
     sns.histplot(x = main_dataframe_collumn, kde=True)
     plt.show()
 
@@ -167,7 +171,6 @@ def exclude_outliers(main_df, collumn) :
     main_df = main_df.loc[(main_df[collumn] >= lower_limit) & (main_df[collumn] <= upper_limit), :]
     return main_df, amount_lines - main_df.shape[0]
 
-histogram(main_dataframe['maximum_nights'])
 
 for collumn in ['price', 'extra_people'] :
     main_dataframe, amount_removed_lines = exclude_outliers(main_dataframe, collumn)
@@ -182,9 +185,19 @@ for collumn in ['price', 'extra_people'] :
 
 def bar_graph(main_dataframe_collumn) :
     plt.figure(figsize=(15, 5))
+    plt.subplots_adjust(bottom=0.3)
     ax = sns.barplot(x = main_dataframe_collumn.value_counts().index, y = main_dataframe_collumn.value_counts())
     ax.set_xlim(calculate_limits(main_dataframe_collumn))
     plt.show()
+
+def bar_graph_string(main_dataframe_collumn_name) :
+    plt.figure(figsize=(15, 5))
+    plt.subplots_adjust(bottom=0.3)
+    bar_graph = sns.countplot(x=main_dataframe_collumn_name, data=main_dataframe)
+    bar_graph.tick_params(axis='x', rotation=90)
+    plt.show()
+
+print(main_dataframe['maximum_nights'].value_counts())
 
 
 """
@@ -228,20 +241,17 @@ def group_categories(collumn, grouped_category_name, amount) :
         if series_category[category_type] < amount :
             main_dataframe.loc[main_dataframe[collumn] == category_type, collumn] = grouped_category_name
 
-    plt.figure(figsize=(15,10))
-    category_graph = sns.countplot(x = main_dataframe[collumn])
-    category_graph.tick_params(axis='x', rotation=90)
-    ###plt.show()
-
-
 
 #? Starting with the 'property_type' collumn, we will group all the entires will less than 2000 entries into the 'Other' category since they had a significant amount of categories and their low numbers would make the model more complex and less efficient.
+
 
 group_categories('property_type', 'Other', 2000)
 
 #? Next, the 'bed_type' collumn only has 5 categories, however only the 'real_bed' category has significant values, while the others have small, broken values. Therefore, we will group all these entries into a 'Other beds' category. (The amount 10,000 was chosen simply to choose the remaining categories)
 
+
 group_categories('bed_type', 'Other beds', 10000)
+
 
 #? Next, the 'room_type' collumn only has 4 categories whithout any major value discrepancies in the data (only two categories have significant smaller values), so no change/grouping of categories will be needed.
 
@@ -278,7 +288,7 @@ webbrowser.open(os.path.realpath('map.html'))
 
 """
 We need to adjust some columns to facilitate the machine learning model's analysis.
-There are two types of data inside the columns: caregories and True or False
+There are two types of data inside the columns: categories and True or False
 Booleans will become 0 (false) and 1 (true)
 Categories will be encoded using dummy encoding (creates columns for each category and applies binary values based if they are in the category or not)
 """
