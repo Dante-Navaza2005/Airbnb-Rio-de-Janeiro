@@ -66,32 +66,3 @@
 * [7 steps to build a prediction model](src\17-steps-to-build-model\README.md)
   * [Defining if it is classification or regression problem](src\18-define-classification-regression-problem\README.md)
   * [Choosing the metrics to evaluate the model](src\19-Choosing-evaluation-metrics\README.md)
-  * Choose which models we are going to use
-  * Train the models and test
-  * Compare the results of the models and choose the best one
-  * Analyse the best model
-  * Adjust and improve the best model
-* Analise model function
-* Splitting the data
-* Testing the three models
-
----
-
-# Final model
-
-* Analyzing the best model
-* Adjusting an improving the best model
-* Applying the final changes
-
----
-
-# Deployment (streamlit)
-
-* Deployment forms
-* Exporting model as joblib
-* airbnb_deploy file
-  * Importing streamlit and creating the buttons
-  * Dummy variable buttons
-* Attributing the values as inputs
-* Creating the preview value button
-* Finalizing
