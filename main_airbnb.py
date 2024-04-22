@@ -323,7 +323,7 @@ Steps to build a prediction model:
 3) Choose which models we are going to use
     - Linear Regression - traces a line that minimizes the erros, values closer to the line are better, not efficient with weak/no correlations
     - Random Forest Regressor - Decision trees - doing questions separating the data into different groups, random forest regressor uses multiple decision trees with random smaller parts of the data and calculates the mean to reach the final result
-    - Extra Trees - Same and random forest regressor, however the random forest chooses the best question (that will filter the most data) while extra trees asks a random question (which could work beest depending on the question)
+    - Extra Trees - Same as random forest regressor, however the random forest chooses the best question (that will filter the most data) while extra trees asks a random question (which could work best depending on the question)
 
 4) Train the models and test
     - Randomly separate the data into two sets: training and testing data
@@ -336,8 +336,8 @@ Steps to build a prediction model:
     - RSME will be used as a tiebreaker when models have very similar R²
     - Time and complexity will also be taken into consideration (less time and less information needed is prefered)
 
-6) Analyse the best model
-    - Analyse the importance of each feature (if its not relevant, we can remove it to observe changes in the result)
+6) Analyze the best model
+    - Analyze the importance of each feature (if its not relevant, we can remove it to observe changes in the result)
     - We will perform changes with the goal of improving the R²/RSME, speed, and simplicity of the model
 
 7) Adjust and improve the best model
@@ -345,7 +345,7 @@ Steps to build a prediction model:
 """
 
 #? First we will create a function to evaluate each model. 'prediction' is the prediction made by the model, 'model_name' is the name of the type of the model, and 'y_test' is the true value of the prediction used to compare the results.
-def analise_model(prediction, y_test) :
+def analyze_model(prediction, y_test) :
     r2 = r2_score(y_test, prediction)
     rsme = root_mean_squared_error(y_test, prediction)
     print(f"The model has an R² of {r2} and an RSME of {rsme}\n")
@@ -368,7 +368,7 @@ for i, model in enumerate([linear_model, random_forest_model , extra_trees_model
     model.fit(x_train, y_train)
     prediction = model.predict(x_test)
     print(models_list[i])
-    analise_model(prediction, y_test)
+    analyze_model(prediction, y_test)
 
 #? After analyzing the results of each model, the Extra Trees model was chosen to be the most effective. 
 #? The linear regression model has a very low R² value (32%), and while the Extra Trees and the Random Forest model have very similar R², the Random Forest model has a higher RSME and takes one extra minute to calculate in comparison to the Extra Trees.
@@ -403,6 +403,7 @@ for column in feature_importance_dict :
 
 main_dataframe_coded['room_type_Private room'] = room_type_private_room
 
+#? Separating the new data
 y, x = (main_dataframe_coded['price'], main_dataframe_coded.drop('price', axis=1))
 x_train, x_test, y_train, y_test = train_test_split(x, y, random_state=20)
 
@@ -412,10 +413,11 @@ final_model = ExtraTreesRegressor()
 
 final_model.fit(x_train, y_train)
 prediction = final_model.predict(x_test)
-analise_model(prediction, y_test)
+analyze_model(prediction, y_test)
 
 #? We can see that the model's accuracy barely changed after removing said features, however its efficiency and simplicity has improved significantly (5 minutes to 2 minutes)
 
+#? creating a new dictionary for the updated features
 feature_importance_dict_final = dict(zip(x_train.columns, final_model.feature_importances_))
 sorted_feature_importance_dict = sorted(feature_importance_dict_final.items(), key=lambda x:x[1])
 feature_importance_dict_final = dict(sorted_feature_importance_dict)

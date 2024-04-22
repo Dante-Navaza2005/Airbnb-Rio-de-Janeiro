@@ -4,6 +4,7 @@
 
 ---
 
+- [About me](src\1-Introduction\about-me.md)
 - [Introduction](src\1-Introduction\README.md)
   - [Context and objective](src\1-Introduction\objective.md)
 
@@ -66,3 +67,39 @@
 * [7 steps to build a prediction model](src\17-steps-to-build-model\README.md)
   * [Defining if it is classification or regression problem](src\18-define-classification-regression-problem\README.md)
   * [Choosing the metrics to evaluate the model](src\19-Choosing-evaluation-metrics\README.md)
+  * [Choose which models we are going to use](src\20-choose-models-to-use\README.md)
+  * [Train the models and test](src\21-Training-and-testing-models\README.md)
+  * [Comparing the results of the models and choosing the best one](src\22-Compare-model-results\README.md)
+  * [Analyzing the best model](src\23-analyze-best-model\README.md)
+  * [Adjusting and improving the best model](src\24-Adjust-and-improve-model\README.md)
+* [analyze_model function](src\25-analyze-model-function\README.md)
+* [Splitting the data](src\26-splitting-the-data\README.md)
+* [Testing the three models](src\27-testing-the-models\README.md)
+
+---
+
+# Final model
+
+* [Choosing the best model](src\28-choosing-best-model-final\README.md)
+* [Analyzing the best model](src\29-analyzing-best-model-final\README.md)
+* [Adjusting an improving the best model](src\30-adjusting-and-imporivng-final\README.md)
+* [Applying the final changes](src\31-applying-final-changes\README.md)
+
+---
+
+# Deployment (streamlit)
+
+* [Deployment forms](src\32-deployment-forms\README.md)
+* [Exporting model as joblib](src\33-exporting-model-joblib\README.md)
+* [airbnb_deploy file](src\34-airbnb-deploy-file\README.md)
+  * [Importing streamlit and starting to create buttons](src\35-importing-and-creating-button\README.md)
+  * [Dummy variable dictionaries](src\36-dummy-variable-dictionaries\README.md)
+* [Attributing the values as inputs](src\37-attributing-values-inputs\README.md)
+* [Creating the preview value button](src\38-preview-value-button\README.md)
+* [Finalizing](src\39-finalizing\README.md)
+
+---
+
+# Conclusion
+
+* [Thanks and future plans](src\40-thanks-future-plans\README.md)

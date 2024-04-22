@@ -13,7 +13,7 @@ It utilizes the equation **Y = a * x1 + b *x 2 + c * x3 + d * x4 ... + z** where
 
 During the training process, the model learns the values of the coefficients **(a,b,c,d...)** that minimize the errors between the predicted and actual prices in the training data. These coefficients capture the relationships between the independent variables and the dependent variable **Y**, allowing you to analyze the impact of various factors on the price of the house.
 
-This linear regression model is one of the three models that were analyzed, with the other two being the Random Forest Regressor and Extra Trees (these three especifically were selected due to their wide use and effectivness in most cases), which will be explained in the third section (selection).
+This linear regression model is one of the three models that were analyzed, with the other two being the Random Forest Regressor and Extra Trees (these three especifically were selected due to their wide use and effectivness in most cases), which will be explained in the third section (model selection).
 
 Then there are other models which are revolved around solving classification problems that require a prediction of a discrete category or class label. A example of this would be a model that predicts if a email is SPAM or not. It uses algorithms to categorize input data into one or more discrete classes or categories.
 

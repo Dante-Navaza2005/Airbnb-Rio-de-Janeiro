@@ -42,7 +42,7 @@ Extra trees
 
 ![1710720029817](image/README/1710720029817.png) after removing 'is_buisness_ready'
 
-![1710722783843](image/README/1710722783843.png) after removing prperty type and bed type
+![1710722783843](image/README/1710722783843.png) after removing property type and bed type
 
 ![1710725704816](image/README/1710725704816.png) after removing all 0.007
 
