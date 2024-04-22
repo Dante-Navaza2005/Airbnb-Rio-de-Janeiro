@@ -4,10 +4,9 @@ First we will export the model itself using the joblib library to save it inside
 
 ```python
 x["Price"] = y
-x.to_csv("final_data.csv")
+x.to_csv(r"deploy\final_data.csv")
 
 joblib.dump(final_model, "final_model.joblib", compress = 3)
 ```
-
 
 **Obs:** We added a compress level of 3 inside the joblib.dump parameters in order to reduce the size of the file from approximadetly **2 GB** down to **400 MB**, however, the model gets **slower** each time the **compress level increases**.

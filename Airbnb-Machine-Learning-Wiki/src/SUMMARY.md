@@ -92,9 +92,9 @@
 * [Deployment forms](src\32-deployment-forms\README.md)
 * [Exporting model as joblib](src\33-exporting-model-joblib\README.md)
 * [airbnb_deploy file](src\34-airbnb-deploy-file\README.md)
-  * [Importing streamlit and starting to create buttons](src\35-importing-and-creating-button\README.md)
-  * [Dummy variable dictionaries](src\36-dummy-variable-dictionaries\README.md)
-* [Attributing the values as inputs](src\37-attributing-values-inputs\README.md)
+  * [Importing streamlit and setting dictionaries](src\35-importing-and-creating-button\README.md)
+  * [Setting up page and config](src\36-dummy-variable-dictionaries\README.md)
+* [Creating the buttons](src\37-attributing-values-inputs\README.md)
 * [Creating the preview value button](src\38-preview-value-button\README.md)
 * [Finalizing](src\39-finalizing\README.md)
 

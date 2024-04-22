@@ -27,7 +27,6 @@ a = Analysis(
     cipher=block_cipher,
     noarchive=False,
 )
-
 pyz = PYZ(a.pure)
 
 exe = EXE(

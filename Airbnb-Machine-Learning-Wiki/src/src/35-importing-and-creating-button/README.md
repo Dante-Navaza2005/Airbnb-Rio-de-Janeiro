@@ -1,4 +1,4 @@
-# Importing streamlit and starting to create buttons
+# Importing streamlit and setting dictionaries
 
 Importing all necessary libraries:
 
@@ -46,4 +46,11 @@ x_numerical = {'latitude': 0, 'longitude': 0, 'accommodates': 0, 'bathrooms': 0,
 x_boolean = {'host_is_superhost': 0, 'instant_bookable': 0}
 
 x_lists = {'property_type': ['Apartment', 'House'], 'room_type': ['Entire home/apt', 'room_type_Private room'], 'cancellation_policy': ['flexible', 'moderate', 'strict_14_with_grace_period']}
+```
+
+
+Now we will create another dictionary containing only the lists created by the dummy variables. This is so we can store the values the user enters.
+
+```python
+list_values = {'property_type_Apartment' : 0, 'property_type_House' : 0, 'room_type_Entire home/apt' : 0, 'room_type_Private room' : 0, 'cancellation_policy_flexible' : 0, 'cancellation_policy_moderate' : 0, 'cancellation_policy_strict_14_with_grace_period' : 0}
 ```
