@@ -13,7 +13,7 @@
 # Getting Started
 
 * [Importing and installing libraries](src\2-Importing-and-installing-libraries\README.md)
-* [Importing and the consolidating databse](src\3-Importing-and-consolidating-database\importing-and-consolidating-database.md)
+* [Importing and consolidating the databse](src\3-Importing-and-consolidating-database\importing-and-consolidating-database.md)
 
 ---
 

@@ -2,3 +2,5 @@ dataset.zip
 /dataset
 
 *.joblib
+deploy/dist/run.exe
+deploy/build/run/run.pkg
