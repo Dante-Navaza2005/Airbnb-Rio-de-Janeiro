@@ -1,6 +1,6 @@
 # Finalizing
 
-Lastly, we need to configure our project to run streamlit via a .exe file and finalize the deployment fase. 
+Lastly, we need to configure our project to run streamlit via a .exe file and finalize the deployment fase.
 
 * First, inside the deploy folder, create a run.py file and copy this code for the .exe to run the aplication:
 
@@ -107,6 +107,7 @@ exe = EXE(
   * If faced with bugs related to paths not found, re-check if there is a Lib directory or if the name of your virtual enviroment is written correctly
   * Also make sure that you are inside the right directory inside the cmd prompt
 * Copy and paste the .streamlit folder with the config.toml file into the dist folder, located inside the deploy folder. This will keep the modifications we made regarding the maximum limit of upload size.
+* **Important: Also move the .joblib file and the final_data.csv into the dist folder as both are required for the model to work when distributing the .exe file to other users**.
 
 All done! The .exe is now located inside the dist folder and when it is executed the streamlit website appears where we can upload the prediction model and utilize its features. We can now send this project to anyone and they can use it regardless if they have python installed or not. You will just need to send the
 

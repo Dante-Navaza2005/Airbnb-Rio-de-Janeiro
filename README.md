@@ -19,10 +19,10 @@
 
 * [Context and objective](#-Context-and-objective)
 * [Features](#-features)
-* [Getting started](#-getting-started)
-  * [Docker](#docker)
-  * [Node](#node)
-  * [Proxmox](#proxmox)
+* [Getting started](#-Getting-started)
+  * [Download](#Download)
+  * [Executing the file](#Executing-the-file)
+  * [Additional changes](#Additional-changes)
 * [Services](#-services)
 * [Themes](#-themes)
 * [Icons](#-icons)
@@ -35,24 +35,34 @@
 
 ## 🌐 Context and objective
 
-ksdfksldjflsjkdflkjsdlkf
+Airbnb allows anyone with a spare room or property of any type (apartment, house, chalet, inn, etc.) to list their property for rent on a daily basis.
+
+As a host, you create your profile and list your property. In this listing, hosts should provide a comprehensive description of the property to assist renters/travelers in choosing the best accommodation and to make their listing more appealing.
+
+There are numerous customizations available in the listing, ranging from minimum stay requirements, pricing, number of rooms, to cancellation policies, extra guest fees, identity verification requirements for renters, etc.
+
+Our objective is to build a price prediction model that enables property owners to determine the appropriate daily rate for their property. Additionally, to assist renters in evaluating whether a listed property offers a competitive price compared to similar properties with similar characteristics.
 
 ## 🎯 Features
 
-* 🤖 **Machine learning.** Supervised learning model with a 
-* ⚡ **Real-time**. Interactive cards with extra information.
-* 🌎 **Multi-language**. Supports multiple languages.
-* 🗂️ **Grouping**. Create custom service groups.
-* 👌 **Easy setup**. A few lines of yaml and your homepage is ready to go.
-* 🚀 **Fast**. Everything is fast and free of hang-ups.
-* 🐳 **Docker**. Optimized docker images for popular platforms.
-* 📲 **PWA**. Installable application.
+* 🤖  **Machine Learning** : Employs the Extra Trees algorithm in a supervised learning model for robust property price estimation.
+* ⚡  **Real-Time** : Provides instant price predictions as you input data.
+* 🌎  **Multi-Language** : Offers documentation and a website in multiple languages for broader accessibility.
+* 🗂️  **Customizable** : Allows you to include various property features to refine model accuracy.
+* 👌  **Simple Setup** : Get started quickly by downloading an executable folder and a joblib model file.
+* 🚀  **High Speed** : Delivers price calculations within seconds. You can further boost performance by adjusting the joblib file's compression level (note: higher compression reduces speed).
+* 📲  **Executable Format** : Packaged as an executable file for easy sharing across different platforms and systems.
 
 ## 🚀 Getting started
 
-### Docker
+**IMPORTANT NOTE: For an in-depth look at the development process behind this project, check out the comprehensive wiki available at the header of the README or click [here](https://airbnb-rio-de-janeiro.onrender.com/). It covers every aspect of the project, from initial concept to final implementation.**
 
-This Docker image is published to both Docker Hub and the GitHub container registry. Depending on your preferences and needs, you can reference both `hywax/mafl` as well as `ghcr.io/hywax/mafl`.
+### Download
+
+1. As the dist folder was too heavy to be committed on Github, you will need to download it from google drive. Go to the header of this README file and click on "Download .exe folder", alternatevely, click [here](https://drive.google.com/drive/folders/1q_4X9UAha5WXrZVSjj4235ktvcQOZNx6?usp=sharing)
+2. You will be taken to a google drive with the dist folder. Download all files in zip format by clicking on the name dist located on the top of the page then on "Make download"
+
+![1713871827813](image/README/1713871827813.png)
 
 ```yaml
 version: '3.8'
@@ -67,7 +77,7 @@ services:
       - ./config.yml:/app/data/config.yml
 ```
 
-### Node
+### Executing the file
 
 First, clone the repository:
 

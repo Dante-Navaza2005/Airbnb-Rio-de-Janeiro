@@ -429,7 +429,7 @@ print(feature_importance_dict_final)
 #? We will use the joblib library to save the model in a .joblib file
 
 x["Price"] = y
-x.to_csv(r"deploy\final_data.csv")
+x.to_csv(r"final_data.csv")
 
 joblib.dump(final_model, "final_model.joblib", compress = 3)
 
