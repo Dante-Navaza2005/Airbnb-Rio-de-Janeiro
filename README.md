@@ -19,6 +19,7 @@
 
 * [Context and objective](#-Context-and-objective)
 * [Features](#-features)
+* [Adjustable parameters]()
 * [Getting started](#-Getting-started)
   * [Download](#Download)
   * [Executing the file](#Executing-the-file)
@@ -53,6 +54,13 @@ Our objective is to build a price prediction model that enables property owners 
 * 👌  **Simple Setup** : Get started quickly by downloading an executable folder and a joblib model file.
 * 🚀  **High Speed** : Delivers price calculations within seconds. You can further boost performance by adjusting the joblib file's compression level (note: higher compression reduces speed).
 * 📲  **Executable Format** : Packaged as an executable file for easy sharing across different platforms and systems.
+
+## ⚙️Adjustable parameters
+
+You can adjust a large variety of parameters related to the attributes/features a property has on airbnb to calculate the estimated rental price for your specific case:
+
+Those parameters are:
+
 
 ## 🚀 Getting started
 
