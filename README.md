@@ -17,6 +17,7 @@
 <details>
   <summary><b>Table of Contents</b></summary>
 
+* [Context and objective](#-Context and objective)
 * [Features](#-features)
 * [Getting started](#-getting-started)
   * [Docker](#docker)
@@ -32,18 +33,19 @@
 
 </details>
 
+## 🌐 Context and objective
+
+ksdfksldjflsjkdflkjsdlkf
+
 ## 🎯 Features
 
-* 🔐 **Privacy**. All requests to third-party services occur in backend.
+* 🤖 **Machine learning.** Supervised learning model with a 
 * ⚡ **Real-time**. Interactive cards with extra information.
 * 🌎 **Multi-language**. Supports multiple languages.
-* 🎨 **Themes**. Customize the look to your liking.
 * 🗂️ **Grouping**. Create custom service groups.
-* 🏷️ **Tags**. Add tags to your services.
 * 👌 **Easy setup**. A few lines of yaml and your homepage is ready to go.
 * 🚀 **Fast**. Everything is fast and free of hang-ups.
 * 🐳 **Docker**. Optimized docker images for popular platforms.
-* ✨ **Free**. Mafl is completely free and open source.
 * 📲 **PWA**. Installable application.
 
 ## 🚀 Getting started
