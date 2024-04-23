@@ -1,4 +1,4 @@
-<h1 align="center">Rio Airbnb Price ML Predictor</h1>
+<h1 align="center">Rio de Janeiro Airbnb Price ML Predictor</h1>
 <p align="center">
   <i>This machine learning model utilizes supervised learning to predict the daily rental price for Airbnb properties!</i>
   <br/><br/>
