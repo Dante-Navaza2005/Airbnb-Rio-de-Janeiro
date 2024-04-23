@@ -1,51 +1,159 @@
-# Airbnb Rio de Janeiro
+<h1 align="center">Mafl</h1>
+<p align="center">
+  <i>Mafl is an intuitive service for organizing your homepage. Customize Mafl to your individual needs and work even more efficiently!</i>
+  <br/><br/>
+  <img width="130" alt="Mafl" src="https://raw.githubusercontent.com/hywax/mafl/main/docs/public/logotype.svg"/>
+  <br/><br/>
+  <b><a href="https://mafl.hywax.space/community/showcase.html">User Showcase</a></b> | <b><a href="https://mafl.hywax.space">Documentation</a></b> | <b><a href="https://github.com/hywax/mafl">GitHub</a></b>
+  <br/><br/>
+  <a href="https://github.com/hywax/mafl/blob/main/CHANGELOG.md"><img src="https://img.shields.io/github/package-json/v/hywax/mafl?logo=hackthebox&color=609966&logoColor=fff" alt="Current Version"/></a>
+  <a target="_blank" href="https://github.com/hywax/mafl"><img src="https://img.shields.io/github/last-commit/hywax/mafl?logo=github&color=609966&logoColor=fff" alt="Last commit"/></a>
+  <a target="_blank" href="https://hub.docker.com/r/hywax/mafl"><img src="https://img.shields.io/docker/pulls/hywax/mafl?logo=docker&color=609966&logoColor=fff" alt="Docker pulls"/></a>
+  <a href="https://github.com/hywax/mafl/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-609966?logo=opensourceinitiative&logoColor=fff" alt="License MIT"/></a>
+  <br/><br/>
+  <img src="https://raw.githubusercontent.com/hywax/mafl/main/docs/public/cover.png" alt="Mafl" width="100%"/>
+</p>
 
-![1710029261173](image/README/1710029261173.png) ![1710029347388](image/README/1710029347388.png)
+<details>
+  <summary><b>Table of Contents</b></summary>
 
-![1710066325616](image/README/1710066325616.png)
+* [Features](#-features)
+* [Getting started](#-getting-started)
+  * [Docker](#docker)
+  * [Node](#node)
+  * [Proxmox](#proxmox)
+* [Services](#-services)
+* [Themes](#-themes)
+* [Icons](#-icons)
+* [Languages](#-multi-language)
+* [Credits](#-credits)
+  * [Contributors](#contributors)
+* [License](#-license)
+</details>
 
-![1710066776223](image/README/1710066776223.png)
+## 🎯 Features
 
-![1710067247291](image/README/1710067247291.png)
+* 🔐 **Privacy**. All requests to third-party services occur in backend.
+* ⚡ **Real-time**. Interactive cards with extra information.
+* 🌎 **Multi-language**. Supports multiple languages.
+* 🎨 **Themes**. Customize the look to your liking.
+* 🗂️ **Grouping**. Create custom service groups.
+* 🏷️ **Tags**. Add tags to your services.
+* 👌 **Easy setup**. A few lines of yaml and your homepage is ready to go.
+* 🚀 **Fast**. Everything is fast and free of hang-ups.
+* 🐳 **Docker**. Optimized docker images for popular platforms.
+* ✨ **Free**. Mafl is completely free and open source.
+* 📲 **PWA**. Installable application.
 
-![1710067326710](image/README/1710067326710.png)
+## 🚀 Getting started
 
-![1710105981740](image/README/1710105981740.png) 10% of the lines were outliers and were removed of the price collumn
+### Docker
 
-![1710593821264](image/README/1710593821264.png)
+This Docker image is published to both Docker Hub and the GitHub container registry. Depending on your preferences and needs, you can reference both `hywax/mafl` as well as `ghcr.io/hywax/mafl`.
 
-![1710596842853](image/README/1710596842853.png)![1710597647838](image/README/1710597647838.png)
+```yaml
+version: '3.8'
 
-![1710599294014](image/README/1710599294014.png)
+services:
+  mafl:
+    image: hywax/mafl
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./config.yml:/app/data/config.yml
+```
 
-![1710629587819](image/README/1710629587819.png)
+### Node
 
-![1710638677934](image/README/1710638677934.png)![1710639303602](image/README/1710639303602.png)
+First, clone the repository:
 
-![1710677225597](image/README/1710677225597.png)
+```shell
+git clone https://github.com/hywax/mafl.git
+```
 
-![1710677921583](image/README/1710677921583.png)
+Then install dependencies and build the production bundle (I'm using `yarn` here, you can use `npm` or `pnpm` if you like):
 
-![1710688299088](image/README/1710688299088.png)
+```shell
+yarn install
+yarn build
+```
 
-![1710705486057](image/README/1710705486057.png)
+Finally, run the server:
 
-![1710706197953](image/README/1710706197953.png) Random forest
+```shell
+yarn preview
+```
 
-![1710707888947](image/README/1710707888947.png)
+The application will start with a basic configuration, which is located in the `data` folder.
 
-Extra trees
+### Proxmox
 
-![1710712348570](image/README/1710712348570.png)
+To create a new Proxmox VE Mafl LXC, run the command below in the Proxmox VE Shell.
 
-![1710713662204](image/README/1710713662204.png)
+```shell
+bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/ct/mafl.sh)"
+```
 
-![1710720029817](image/README/1710720029817.png) after removing 'is_buisness_ready'
+Configure the application by editing the `config.yml` file:
 
-![1710722783843](image/README/1710722783843.png) after removing property type and bed type
+```shell
+nano /opt/mafl/data/config.yml
+```
 
-![1710725704816](image/README/1710725704816.png) after removing all 0.007
+Many thanks to [@tteck](https://github.com/tteck) for helping me create lxc script.
 
-![1710725755440](image/README/1710725755440.png)
+## 📊 Services
 
-![1710725864248](image/README/1710725864248.png)![1711147822017](image/README/1711147822017.png)
+The basic concept of `Mafl` is to create not just a homepage, but to create an interactive homepage page. You can combine different services with each other. You can combine different services to create the perfect customized homepage for you.
+
+List of services:
+* **[Base](https://mafl.hywax.space/services/base.html)** - The main card of the service. Other services are created on the basis of this service.
+* **[IP API](https://mafl.hywax.space/services/ip-api.html)** - Shows information about your IP address.
+* **[Weather](https://mafl.hywax.space/services/openweathermap.html)** - Shows weather information for your location.
+
+## 🎨 Themes
+
+There are several ready-made themes in `Mafl`. But nothing prevents you from creating your own design themes and sharing them with other users
+
+<img src="https://raw.githubusercontent.com/hywax/mafl/main/docs/public/themes.png" alt="Mafl themes" width="100%"/>
+
+## 🖼 Icons
+
+Services can have icons. With support for several different icon packs, you can find the perfect thumbnail for any application or service.
+
+Supported types:
+* **[Iconify](https://icon-sets.iconify.design/)** - Over 200,000 open source vector icons
+* **Emoji** - Any valid emoji can be used as an icon
+* **URL** - Pass the URL of any matching image so that it can be found and displayed.
+* **Local** - Store custom images locally and reference them by file name
+
+## 🌎 Multi-language
+
+`Mafl` supports multiple languages and locales. The app should automatically detect your language and set it in the settings. If not, set it in `config.yml` with the `lang` property.
+
+Supported Languages:
+* 🇬🇧 **English** - `en`
+* 🇷🇺 **Russian** - `ru`
+* 🇨🇳 **Chinese** - `zh`
+* 🇨🇮 **Hindi** - `hi`
+* 🇪🇸 **Spanish** - `es`
+* 🇸🇦 **Arabic** - `ar` (by [@mohmadhabib](https://github.com/mohmadhabib))
+* 🇵🇱 **Polish** - `pl` (by [@UberDudePL](https://github.com/UberDudePL))
+* 🇫🇷 **France** - `fr` (by [@maxim31cote](https://github.com/maxim31cote))
+
+If you haven't found your language, it can easily be added! Use the instructions in the section [contributing](https://mafl.hywax.space/community/contributing.html) on docs.
+
+## 🏆 Credits
+
+A huge thank you to everyone who is helping to improve Mafl. Thanks to you, the project can evolve!
+
+### Contributors
+
+To become a contributor, please follow our [contributing guide](https://mafl.hywax.space/community/contributing.html).
+
+<img src="https://raw.githubusercontent.com/hywax/mafl/main/docs/public/contributors.svg" alt="Mafl Contributors" width="100%"/>
+
+## 📄 License
+
+This app is open-sourced software licensed under the [MIT license](https://github.com/hywax/mafl/blob/main/LICENSE).
