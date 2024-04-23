@@ -2,6 +2,8 @@
 
 ## Wikipedia guide
 
+**IMPORTANT NOTE: This wiki details every step involved in the creation of this project. If you're interested only in running the final `.exe` file, check out the README file in the [repository](https://github.com/Dante-Navaza2005/Airbnb-Rio-de-Janeiro).**
+
 The documentation for this project was created using mdBook (the documentation for mdBook can be found on its [official GitHub page](https://rust-lang.github.io/mdBook/)). The development process was divided into chapters, which you can navigate through either the table of contents or by using the left and right arrow keys on your keyboard.
 
 The toolbar at the top of the page contains four different buttons:

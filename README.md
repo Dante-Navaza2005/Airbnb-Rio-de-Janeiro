@@ -14,6 +14,8 @@
   <img src="image\README\Airbnb-Deployment-Brave-2024-04-23-00-58-16.gif" alt="Mafl" width="100%"/>
 </p>
 
+**IMPORTANT NOTE: For an in-depth look at the development process behind this project, check out the comprehensive wiki available at the header of the README or click [here](https://airbnb-rio-de-janeiro.onrender.com/). It covers every aspect of the project, from initial concept to final implementation.**
+
 <details>
   <summary><b>Table of Contents</b></summary>
 
@@ -24,13 +26,8 @@
   * [Download](#Download)
   * [Executing the file](#Executing-the-file)
   * [Video demonstration]()
-  * [Additional changes](#Additional-changes)
-* [Services](#-services)
-* [Themes](#-themes)
-* [Icons](#-icons)
-* [Languages](#-multi-language)
-* [Credits](#-credits)
-  * [Contributors](#contributors)
+* [Additional changes](#Additional-changes)
+* [Thanks and contact](#-services)
 * [License](#-license)
 
 </details>
@@ -57,21 +54,37 @@ Our objective is to build a price prediction model that enables property owners 
 
 ## ⚙️Adjustable parameters
 
-You can adjust a large variety of parameters related to the attributes/features a property has on airbnb to calculate the estimated rental price for your specific case:
+On the app page, you can adjust a variety of parameters to estimate the rental price for an Airbnb property. These parameters represent different attributes/features that influence the rental cost:
 
-Those parameters are:
+* **Latitude:** The latitude coordinates of the property
+* **Longitude:** The longitude coordinates of the property
+* **Accommodates:** Maximum number of guests
+* **Bathrooms:** Number of bathrooms
+* **Bedrooms:** Number of bedrooms
+* **Beds:** Number of beds
+* **extra_people:** Additional cost (in reais) for each guest beyond the accommodation limit
+* **minimum_nights:** Minimum number of nights required for booking
+* **Year:** The year for which the property is booked
+* **Ammount amenities:** Number of amenities available at the property
+* **Host_Listings_Count:** Number of properties listed by the host
+* **Host_is_Superhost:** Whether the host is a superhost
+* **Instant_Bookable:** Whether the property can be booked instantly
+* **Property_Type:** Type of property (e.g., house or apartment)
+* **Room_Type:** Type of room being booked (e.g., entire home/apartment or private room)
+* **Cancellation_Policy:** Type of cancellation policy (e.g., flexible, moderate, or strict)
 
+**Note:** Some parameters, like **Property Type** and  **Room Type** , have limited options because most of the data focuses on specific categories. This was explained in more details on the [wiki](https://airbnb-rio-de-janeiro.onrender.com/src/10-Group_categories-function/10-1-group-property_type/index.html)
 
 ## 🚀 Getting started
 
-**IMPORTANT NOTE: For an in-depth look at the development process behind this project, check out the comprehensive wiki available at the header of the README or click [here](https://airbnb-rio-de-janeiro.onrender.com/). It covers every aspect of the project, from initial concept to final implementation.**
+**REMINDER: For an in-depth look at the development process behind this project, check out the comprehensive wiki available at the header of the README or click [here](https://airbnb-rio-de-janeiro.onrender.com/). It covers every aspect of the project, from initial concept to final implementation.**
 
 ### Download
 
 1. As the dist folder was too heavy to be committed on Github, you will need to download it from google drive. Go to the header of this README file and click on "Download .exe folder", alternatevely, click [here](https://drive.google.com/drive/folders/1q_4X9UAha5WXrZVSjj4235ktvcQOZNx6?usp=sharing)
 2. You will be taken to a google drive with the dist folder. Download all files in zip format by clicking on the name dist located on the top of the page then on "Make download"
 
-![1713871827813](image/README/1713871827813.png) 
+![1713871827813](image/README/1713871827813.png)
 
 3. The compressed file size is relatively large due to the extensive data used by the prediction model and the inclusion of all necessary modules and libraries whithin the executable
 4. After downloading the folder, extract it on your computer.
@@ -88,7 +101,7 @@ Those parameters are:
 3. Double click the run file to execute it.
 4. When done so, a empty terminal screen will appear, **wait** until the file automatically opens the project app into your browser. (If it doesnt automatically open for you, click on the Local URL displayed on the terminal after it finished executing)
 
-![1713872988867](image/README/1713872988867.png)    
+![1713872988867](image/README/1713872988867.png)
 
 5. On the first launch, the terminal might prompt you to enter your email address. If it does, you can safely provide it. This step is only for bot verification and you won't receive any spam.
 6. When entering the app page, you **NEED** to upload the final_model.joblib file into the specified box as it is the file that contains the prediction model. It should already be located inside the downlaoded dist folder, but in case it isn't a link to download it will be shown on the app page.
@@ -98,80 +111,21 @@ Those parameters are:
 
 Here's a video that walks you through the entire process, from opening the executable to adjusting the parameters and running the model:
 
-
 https://github.com/Dante-Navaza2005/Airbnb-Rio-de-Janeiro/assets/122757441/86d065b3-7a6b-4d91-a7fb-c3d6ad2880f8
 
+## 🛠️Additional changes
 
+The code for this project is designed for flexibility, allowing users to customize it according to their needs. To start, clone the repository and open the `main_airbnb.py` file.
 
-### Proxmox
+You can experiment with different models, like the Random Forest Regressor, and adjust the attributes or features used for analysis to explore new and potentially more efficient results. For a more comprehensive guide on data handling and manipulation, refer to the [project wiki](https://airbnb-rio-de-janeiro.onrender.com/).
 
-To create a new Proxmox VE Mafl LXC, run the command below in the Proxmox VE Shell.
+If you want to improve the speed of the model, consider reducing the compression level in the section where the prediction model is exported as a `.joblib` file. This can speed up the model but will result in a larger file size.
 
-```shell
-bash -c "$(wget -qLO - https://github.com/tteck/Proxmox/raw/main/ct/mafl.sh)"
-```
+After making any changes, be sure to run the `main_airbnb.py` file and export the updated code as a `.exe` file. Instructions for this process can be found in the [final section of the wiki](https://airbnb-rio-de-janeiro.onrender.com/src/39-finalizing/index.html).
 
-Configure the application by editing the `config.yml` file:
+## 🏆 Thanks and contact
 
-```shell
-nano /opt/mafl/data/config.yml
-```
-
-Many thanks to [@tteck](https://github.com/tteck) for helping me create lxc script.
-
-## 📊 Services
-
-The basic concept of `Mafl` is to create not just a homepage, but to create an interactive homepage page. You can combine different services with each other. You can combine different services to create the perfect customized homepage for you.
-
-List of services:
-
-* **[Base](https://mafl.hywax.space/services/base.html)** - The main card of the service. Other services are created on the basis of this service.
-* **[IP API](https://mafl.hywax.space/services/ip-api.html)** - Shows information about your IP address.
-* **[Weather](https://mafl.hywax.space/services/openweathermap.html)** - Shows weather information for your location.
-
-## 🎨 Themes
-
-There are several ready-made themes in `Mafl`. But nothing prevents you from creating your own design themes and sharing them with other users
-
-<img src="https://raw.githubusercontent.com/hywax/mafl/main/docs/public/themes.png" alt="Mafl themes" width="100%"/>
-
-## 🖼 Icons
-
-Services can have icons. With support for several different icon packs, you can find the perfect thumbnail for any application or service.
-
-Supported types:
-
-* **[Iconify](https://icon-sets.iconify.design/)** - Over 200,000 open source vector icons
-* **Emoji** - Any valid emoji can be used as an icon
-* **URL** - Pass the URL of any matching image so that it can be found and displayed.
-* **Local** - Store custom images locally and reference them by file name
-
-## 🌎 Multi-language
-
-`Mafl` supports multiple languages and locales. The app should automatically detect your language and set it in the settings. If not, set it in `config.yml` with the `lang` property.
-
-Supported Languages:
-
-* 🇬🇧 **English** - `en`
-* 🇷🇺 **Russian** - `ru`
-* 🇨🇳 **Chinese** - `zh`
-* 🇨🇮 **Hindi** - `hi`
-* 🇪🇸 **Spanish** - `es`
-* 🇸🇦 **Arabic** - `ar` (by [@mohmadhabib](https://github.com/mohmadhabib))
-* 🇵🇱 **Polish** - `pl` (by [@UberDudePL](https://github.com/UberDudePL))
-* 🇫🇷 **France** - `fr` (by [@maxim31cote](https://github.com/maxim31cote))
-
-If you haven't found your language, it can easily be added! Use the instructions in the section [contributing](https://mafl.hywax.space/community/contributing.html) on docs.
-
-## 🏆 Credits
-
-A huge thank you to everyone who is helping to improve Mafl. Thanks to you, the project can evolve!
-
-### Contributors
-
-To become a contributor, please follow our [contributing guide](https://mafl.hywax.space/community/contributing.html).
-
-<img src="https://raw.githubusercontent.com/hywax/mafl/main/docs/public/contributors.svg" alt="Mafl Contributors" width="100%"/>
+Thank you for taking the time to read through my project. If you'd like to discuss this project further or have any questions, I'm open to connecting. Once more, feel free to reach out via email at dantenavaza2005@gmail.com or [LinkedIn](https://www.linkedin.com/in/dante-navaza/). If you're interested, you can explore my other projects on my [GitHub page](https://github.com/Dante-Navaza2005). I appreciate your interest and look forward to potential collaborations.
 
 ## 📄 License
 
