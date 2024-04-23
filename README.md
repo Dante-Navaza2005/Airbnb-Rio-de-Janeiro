@@ -73,7 +73,7 @@ On the app page, you can adjust a variety of parameters to estimate the rental p
 * **Room_Type:** Type of room being booked (e.g., entire home/apartment or private room)
 * **Cancellation_Policy:** Type of cancellation policy (e.g., flexible, moderate, or strict)
 
-**Note:** Some parameters, like **Property Type** and  **Room Type** , have limited options because most of the data focuses on specific categories. This was explained in more details on the [wiki](https://airbnb-rio-de-janeiro.onrender.com/src/10-Group_categories-function/10-1-group-property_type/index.html). Also the latitude and longitude **MUST** be located whithin the state of Rio de Janeiro. 
+**Note:** Some parameters, like **Property Type** and  **Room Type** , have limited options because most of the data focuses on specific categories. This was explained in more details on the [wiki](https://airbnb-rio-de-janeiro.onrender.com/src/10-Group_categories-function/10-1-group-property_type/index.html). Also the latitude and longitude **MUST** be located whithin the state of Rio de Janeiro.
 
 ## 🚀 Getting started
 
@@ -129,4 +129,4 @@ Thank you for taking the time to read through my project. If you'd like to discu
 
 ## 📄 License
 
-This app is open-sourced software licensed under the [MIT license](https://github.com/hywax/mafl/blob/main/LICENSE).
+This app is open-sourced software licensed under the [MIT license](https://github.com/Dante-Navaza2005/Airbnb-Rio-de-Janeiro/blob/main/LICENSE.txt).
