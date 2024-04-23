@@ -17,7 +17,7 @@
 <details>
   <summary><b>Table of Contents</b></summary>
 
-* [Context and objective](#-Context and objective)
+* [Context and objective](#-Context-and-objective)
 * [Features](#-features)
 * [Getting started](#-getting-started)
   * [Docker](#docker)
