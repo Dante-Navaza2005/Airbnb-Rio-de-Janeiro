@@ -99,6 +99,10 @@ Those parameters are:
 Here's a video that walks you through the entire process, from opening the executable to adjusting the parameters and running the model:
 
 
+https://github.com/Dante-Navaza2005/Airbnb-Rio-de-Janeiro/assets/122757441/86d065b3-7a6b-4d91-a7fb-c3d6ad2880f8
+
+
+
 ### Proxmox
 
 To create a new Proxmox VE Mafl LXC, run the command below in the Proxmox VE Shell.
