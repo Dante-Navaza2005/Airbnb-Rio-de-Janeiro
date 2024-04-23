@@ -22,6 +22,7 @@
 * [Getting started](#-Getting-started)
   * [Download](#Download)
   * [Executing the file](#Executing-the-file)
+  * [Video demonstration]()
   * [Additional changes](#Additional-changes)
 * [Services](#-services)
 * [Themes](#-themes)
@@ -62,43 +63,33 @@ Our objective is to build a price prediction model that enables property owners 
 1. As the dist folder was too heavy to be committed on Github, you will need to download it from google drive. Go to the header of this README file and click on "Download .exe folder", alternatevely, click [here](https://drive.google.com/drive/folders/1q_4X9UAha5WXrZVSjj4235ktvcQOZNx6?usp=sharing)
 2. You will be taken to a google drive with the dist folder. Download all files in zip format by clicking on the name dist located on the top of the page then on "Make download"
 
-![1713871827813](image/README/1713871827813.png)
+![1713871827813](image/README/1713871827813.png) 
 
-```yaml
-version: '3.8'
+3. The compressed file size is relatively large due to the extensive data used by the prediction model and the inclusion of all necessary modules and libraries whithin the executable
+4. After downloading the folder, extract it on your computer.
 
-services:
-  mafl:
-    image: hywax/mafl
-    restart: unless-stopped
-    ports:
-      - '3000:3000'
-    volumes:
-      - ./config.yml:/app/data/config.yml
-```
+![1713872396966](image/README/1713872396966.png)
 
 ### Executing the file
 
-First, clone the repository:
+1. Open the extracted dist folder
+2. Inside it there will be another dist folder, open it until you see a executable file called "run"
 
-```shell
-git clone https://github.com/hywax/mafl.git
-```
+![1713872730244](image/README/1713872730244.png)
 
-Then install dependencies and build the production bundle (I'm using `yarn` here, you can use `npm` or `pnpm` if you like):
+3. Double click the run file to execute it.
+4. When done so, a empty terminal screen will appear, **wait** until the file automatically opens the project app into your browser. (If it doesnt automatically open for you, click on the Local URL displayed on the terminal after it finished executing)
 
-```shell
-yarn install
-yarn build
-```
+![1713872988867](image/README/1713872988867.png)    
 
-Finally, run the server:
+5. On the first launch, the terminal might prompt you to enter your email address. If it does, you can safely provide it. This step is only for bot verification and you won't receive any spam.
+6. When entering the app page, you **NEED** to upload the final_model.joblib file into the specified box as it is the file that contains the prediction model. It should already be located inside the downlaoded dist folder, but in case it isn't a link to download it will be shown on the app page.
+7. That's it! You can now customize the property characteristics by adjusting the parameters on the page to match your desired case. Once you're ready, click the "View the predicted value" button at the bottom of the page to see the estimated daily rental price. (**Note:** The results may take a few seconds to appear, depending on your machine's performance.)
 
-```shell
-yarn preview
-```
+### Video demonstration
 
-The application will start with a basic configuration, which is located in the `data` folder.
+Here's a video that walks you through the entire process, from opening the executable to adjusting the parameters and running the model:
+
 
 ### Proxmox
 
