@@ -1,10 +1,10 @@
-<h1 align="center">Mafl</h1>
+<h1 align="center">Rio de Janeiro Airbnb Machine Learning Model</h1>
 <p align="center">
-  <i>Mafl is an intuitive service for organizing your homepage. Customize Mafl to your individual needs and work even more efficiently!</i>
+  <i>This machine learning model utilizes supervised learning to predict the daily rental price for Airbnb properties!</i>
   <br/><br/>
-  <img width="130" alt="Mafl" src="https://raw.githubusercontent.com/hywax/mafl/main/docs/public/logotype.svg"/>
+  <img width="130" alt="Mafl" src="https://revistaazul.voeazul.com.br/wp-content/uploads/2023/03/muito-alem-da-praia-saiba-o-que-fazer-no-rio-de-janeiro.jpeg"/>
   <br/><br/>
-  <b><a href="https://mafl.hywax.space/community/showcase.html">User Showcase</a></b> | <b><a href="https://mafl.hywax.space">Documentation</a></b> | <b><a href="https://github.com/hywax/mafl">GitHub</a></b>
+  <b><a href="https://drive.google.com/drive/folders/1q_4X9UAha5WXrZVSjj4235ktvcQOZNx6?usp=sharing">Download .exe folder</a></b> | <b><a href="https://airbnb-rio-de-janeiro.onrender.com/">Wikipedia</a></b> | <b><a href="https://github.com/Dante-Navaza2005">My profile</a></b> | <b><a href="https://www.linkedin.com/in/dante-navaza/">LinkedIn</a></b>
   <br/><br/>
   <a href="https://github.com/hywax/mafl/blob/main/CHANGELOG.md"><img src="https://img.shields.io/github/package-json/v/hywax/mafl?logo=hackthebox&color=609966&logoColor=fff" alt="Current Version"/></a>
   <a target="_blank" href="https://github.com/hywax/mafl"><img src="https://img.shields.io/github/last-commit/hywax/mafl?logo=github&color=609966&logoColor=fff" alt="Last commit"/></a>
@@ -29,6 +29,7 @@
 * [Credits](#-credits)
   * [Contributors](#contributors)
 * [License](#-license)
+
 </details>
 
 ## 🎯 Features
@@ -108,6 +109,7 @@ Many thanks to [@tteck](https://github.com/tteck) for helping me create lxc scri
 The basic concept of `Mafl` is to create not just a homepage, but to create an interactive homepage page. You can combine different services with each other. You can combine different services to create the perfect customized homepage for you.
 
 List of services:
+
 * **[Base](https://mafl.hywax.space/services/base.html)** - The main card of the service. Other services are created on the basis of this service.
 * **[IP API](https://mafl.hywax.space/services/ip-api.html)** - Shows information about your IP address.
 * **[Weather](https://mafl.hywax.space/services/openweathermap.html)** - Shows weather information for your location.
@@ -123,6 +125,7 @@ There are several ready-made themes in `Mafl`. But nothing prevents you from cre
 Services can have icons. With support for several different icon packs, you can find the perfect thumbnail for any application or service.
 
 Supported types:
+
 * **[Iconify](https://icon-sets.iconify.design/)** - Over 200,000 open source vector icons
 * **Emoji** - Any valid emoji can be used as an icon
 * **URL** - Pass the URL of any matching image so that it can be found and displayed.
@@ -133,6 +136,7 @@ Supported types:
 `Mafl` supports multiple languages and locales. The app should automatically detect your language and set it in the settings. If not, set it in `config.yml` with the `lang` property.
 
 Supported Languages:
+
 * 🇬🇧 **English** - `en`
 * 🇷🇺 **Russian** - `ru`
 * 🇨🇳 **Chinese** - `zh`
