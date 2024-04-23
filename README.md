@@ -42,8 +42,6 @@ There are numerous customizations available in the listing, ranging from minimum
 
 Our objective is to build a price prediction model that enables property owners to determine the appropriate daily rate for their property. Additionally, to assist renters in evaluating whether a listed property offers a competitive price compared to similar properties with similar characteristics.
 
-
-
 ## 🎯 Features
 
 * 🤖  **Machine Learning** : Employs the Extra Trees algorithm in a supervised learning model for robust property price estimation.
@@ -53,8 +51,6 @@ Our objective is to build a price prediction model that enables property owners 
 * 👌  **Simple Setup** : Get started quickly by downloading an executable folder and a joblib model file.
 * 🚀  **High Speed** : Delivers price calculations within seconds. You can further boost performance by adjusting the joblib file's compression level (note: higher compression reduces speed).
 * 📲  **Executable Format** : Packaged as an executable file for easy sharing across different platforms and systems.
-
-
 
 ## ⚙️Adjustable parameters
 
@@ -79,8 +75,6 @@ On the app page, you can adjust a variety of parameters to estimate the rental p
 
 **Note:** Some parameters, like **Property Type** and  **Room Type** , have limited options because most of the data focuses on specific categories. This was explained in more details on the [wiki](https://airbnb-rio-de-janeiro.onrender.com/src/10-Group_categories-function/10-1-group-property_type/index.html). Also the latitude and longitude **MUST** be located whithin the state of Rio de Janeiro.
 
-
-
 ## 🚀 Getting started
 
 **REMINDER: For an in-depth look at the development process behind this project, check out the comprehensive wiki available at the header of the README or click [here](https://airbnb-rio-de-janeiro.onrender.com/). It covers every aspect of the project, from initial concept to final implementation.**
@@ -97,7 +91,6 @@ On the app page, you can adjust a variety of parameters to estimate the rental p
 
 ![1713872396966](image/README/1713872396966.png)
 
-
 ### Executing the file
 
 1. Open the extracted dist folder
@@ -112,17 +105,15 @@ On the app page, you can adjust a variety of parameters to estimate the rental p
 
 5. On the first launch, the terminal might prompt you to enter your email address. If it does, you can safely provide it. This step is only for bot verification and you won't receive any spam.
 6. When entering the app page, you **NEED** to upload the final_model.joblib file into the specified box as it is the file that contains the prediction model. It should already be located inside the downlaoded dist folder, but in case it isn't a link to download it will be shown on the app page.
+
+   ![1713894266968](image/README/1713894266968.png)
 7. That's it! You can now customize the property characteristics by adjusting the parameters on the page to match your desired case. Once you're ready, click the "View the predicted value" button at the bottom of the page to see the estimated daily rental price. (**Note:** The results may take a few seconds to appear, depending on your machine's performance.)
-
-
 
 ### Video demonstration
 
 Here's a video that walks you through the entire process, from opening the executable to adjusting the parameters and running the model:
 
 https://github.com/Dante-Navaza2005/Airbnb-Rio-de-Janeiro/assets/122757441/86d065b3-7a6b-4d91-a7fb-c3d6ad2880f8
-
-
 
 ## 🛠️Additional changes
 
@@ -134,13 +125,9 @@ If you want to improve the speed of the model, consider reducing the compression
 
 After making any changes, be sure to run the `main_airbnb.py` file and export the updated code as a `.exe` file. Instructions for this process can be found in the [final section of the wiki](https://airbnb-rio-de-janeiro.onrender.com/src/39-finalizing/index.html).
 
-
-
 ## 🏆 Thanks and contact
 
 Thank you for taking the time to read through my project. If you'd like to discuss this project further or have any questions, I'm open to connecting. Once more, feel free to reach out via email at dantenavaza2005@gmail.com or [LinkedIn](https://www.linkedin.com/in/dante-navaza/). If you're interested, you can explore my other projects on my [GitHub page](https://github.com/Dante-Navaza2005). I appreciate your interest and look forward to potential collaborations.
-
-
 
 ## 📄 License
 
