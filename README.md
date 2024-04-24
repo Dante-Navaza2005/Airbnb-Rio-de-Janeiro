@@ -83,7 +83,7 @@ On the app page, you can adjust a variety of parameters to estimate the rental p
 1. As the dist folder was too heavy to be committed on Github, you will need to download it from google drive. Go to the header of this README file and click on "Download .exe folder", alternatevely, click [here](https://drive.google.com/file/d/1P1ckjVeNEzY2vsotrbJ40tccq3k0RTRE/view?usp=sharing)
 2. You will be taken to a google drive with the compressed dist folder. Ignore the warnings from google drive and proceed to download the folder.
 
-![image](https://github.com/Dante-Navaza2005/Airbnb-Rio-de-Janeiro/assets/122757441/a8319a1b-404d-4f6a-a86c-e0f39e29257a)
+![image](https://github.com/Dante-Navaza2005/Airbnb-Rio-de-Janeiro/assets/122757441/ca2209b9-f924-46a2-8e65-b7f0245a6ce2)
 
 
 3. The compressed folder size is relatively large due to the extensive data used by the prediction model and the inclusion of all necessary modules and libraries whithin the executable
