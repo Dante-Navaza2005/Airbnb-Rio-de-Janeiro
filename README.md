@@ -4,7 +4,7 @@
   <br/><br/>
   <img width="130" alt="Dante" src="https://revistaazul.voeazul.com.br/wp-content/uploads/2023/03/muito-alem-da-praia-saiba-o-que-fazer-no-rio-de-janeiro.jpeg"/>
   <br/><br/>
-  <b><a href="https://drive.google.com/drive/folders/1q_4X9UAha5WXrZVSjj4235ktvcQOZNx6?usp=sharing">Download .exe folder</a></b> | <b><a href="https://airbnb-rio-de-janeiro.onrender.com/">Wikipedia</a></b> | <b><a href="https://github.com/Dante-Navaza2005">My profile</a></b> | <b><a href="https://www.linkedin.com/in/dante-navaza/">LinkedIn</a></b>
+  <b><a href="https://drive.google.com/file/d/1P1ckjVeNEzY2vsotrbJ40tccq3k0RTRE/view?usp=sharing">Download .exe folder</a></b> | <b><a href="https://airbnb-rio-de-janeiro.onrender.com/">Wikipedia</a></b> | <b><a href="https://github.com/Dante-Navaza2005">My profile</a></b> | <b><a href="https://www.linkedin.com/in/dante-navaza/">LinkedIn</a></b>
   <br/><br/>
   <a href="https://github.com/Dante-Navaza2005/Airbnb-Rio-de-Janeiro/releases"><img src="https://img.shields.io/github/v/release/Dante-Navaza2005/Airbnb-Rio-de-Janeiro?loo=hackthebox&color=609966&logoColor=fff" alt="Latest Release"/></a>
   <a target="_blank" href="https://github.com/Dante-Navaza2005/Airbnb-Rio-de-Janeiro"><img src="https://img.shields.io/github/last-commit/Dante-Navaza2005/Airbnb-Rio-de-Janeiro?logo=github&color=609966&logoColor=fff" alt="Last commit"/></a>
@@ -80,12 +80,13 @@ On the app page, you can adjust a variety of parameters to estimate the rental p
 
 ### Download
 
-1. As the dist folder was too heavy to be committed on Github, you will need to download it from google drive. Go to the header of this README file and click on "Download .exe folder", alternatevely, click [here](https://drive.google.com/drive/folders/1q_4X9UAha5WXrZVSjj4235ktvcQOZNx6?usp=sharing)
-2. You will be taken to a google drive with the dist folder. Download all files in zip format by clicking on the name dist located on the top of the page then on "Make download"
+1. As the dist folder was too heavy to be committed on Github, you will need to download it from google drive. Go to the header of this README file and click on "Download .exe folder", alternatevely, click [here](https://drive.google.com/file/d/1P1ckjVeNEzY2vsotrbJ40tccq3k0RTRE/view?usp=sharing)
+2. You will be taken to a google drive with the compressed dist folder. Ignore the warnings from google drive and proceed to download the folder.
 
-![1713871827813](image/README/1713871827813.png)
+![image](https://github.com/Dante-Navaza2005/Airbnb-Rio-de-Janeiro/assets/122757441/a8319a1b-404d-4f6a-a86c-e0f39e29257a)
 
-3. The compressed file size is relatively large due to the extensive data used by the prediction model and the inclusion of all necessary modules and libraries whithin the executable
+
+3. The compressed folder size is relatively large due to the extensive data used by the prediction model and the inclusion of all necessary modules and libraries whithin the executable
 4. After downloading the folder, extract it on your computer.
 
 ![1713872396966](image/README/1713872396966.png)
