@@ -25,10 +25,10 @@
 * [Getting started](#-Getting-started)
   * [Download](#Download)
   * [Executing the file](#Executing-the-file)
-  * [Video demonstration]()
-* [Additional changes](#Additional-changes)
-* [Thanks and contact](#-services)
-* [License](#-license)
+  * [Video demonstration](#Video-demonstration)
+* [Additional changes](#-Additional-changes)
+* [Thanks and contact](#-Thanks-and-contact)
+* [License](#-License)
 
 </details>
 
