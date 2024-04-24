@@ -52,7 +52,7 @@ Our objective is to build a price prediction model that enables property owners 
 * 🚀  **High Speed** : Delivers price calculations within seconds. You can further boost performance by adjusting the joblib file's compression level (note: higher compression reduces speed).
 * 📲  **Executable Format** : Packaged as an executable file for easy sharing across different platforms and systems.
 
-## ⚙️Adjustable parameters
+## ⚙️ Adjustable parameters
 
 On the app page, you can adjust a variety of parameters to estimate the rental price for an Airbnb property. These parameters represent different attributes/features that influence the rental cost:
 
