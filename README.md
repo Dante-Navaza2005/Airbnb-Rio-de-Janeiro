@@ -103,7 +103,7 @@ On the app page, you can adjust a variety of parameters to estimate the rental p
 
 ![1713872988867](image/README/1713872988867.png)
 
-5. On the first launch, the terminal might prompt you to enter your email address. If it does, you can safely provide it. This step is only for bot verification and you won't receive any spam.
+5. On the first launch, the terminal might prompt you to enter your email address. If it does, just press the enter key to skip it.
 6. When entering the app page, you **NEED** to upload the final_model.joblib file into the specified box as it is the file that contains the prediction model. It should already be located inside the downlaoded dist folder, but in case it isn't a link to download it will be shown on the app page.
 
    ![1713894266968](image/README/1713894266968.png)
