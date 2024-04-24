@@ -21,7 +21,7 @@
 
 * [Context and objective](#-Context-and-objective)
 * [Features](#-features)
-* [Adjustable parameters](#-Adjustable-parameters)
+* [Adjustable parameters](#Adjustable-parameters)
 * [Getting started](#-Getting-started)
   * [Download](#Download)
   * [Executing the file](#Executing-the-file)
