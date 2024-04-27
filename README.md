@@ -1,6 +1,6 @@
 <h1 align="center">Rio de Janeiro Airbnb Price ML Predictor</h1>
 <p align="center">
-  <i>This machine learning model utilizes supervised learning to predict the daily rental price for Airbnb properties!</i>
+  <i>This machine learning model made in python utilizes supervised learning to predict the daily rental price for Airbnb properties!</i>
   <br/><br/>
   <img width="130" alt="Dante" src="https://revistaazul.voeazul.com.br/wp-content/uploads/2023/03/muito-alem-da-praia-saiba-o-que-fazer-no-rio-de-janeiro.jpeg"/>
   <br/><br/>
@@ -19,6 +19,7 @@
   <summary><b>Table of Contents</b></summary>
 
 * [Context and objective](#-Context-and-objective)
+* [Technologies used](#-Technologies-used)
 * [Features](#-features)
 * [Adjustable parameters](#%EF%B8%8F-adjustable-parameters)
 * [Getting started](#-Getting-started)
@@ -31,6 +32,7 @@
 
 </details>
 
+
 ## 🌐 Context and objective
 
 Airbnb allows anyone with a spare room or property of any type (apartment, house, chalet, inn, etc.) to list their property for rent on a daily basis.
@@ -40,6 +42,13 @@ As a host, you create your profile and list your property. In this listing, host
 There are numerous customizations available in the listing, ranging from minimum stay requirements, pricing, number of rooms, to cancellation policies, extra guest fees, identity verification requirements for renters, etc.
 
 Our objective is to build a price prediction model that enables property owners to determine the appropriate daily rate for their property. Additionally, to assist renters in evaluating whether a listed property offers a competitive price compared to similar properties with similar characteristics.
+
+## 🔧 Technologies used
+
+* ⚡  **Python** : Including data science libraries such as pandas, numpy, and matplotlib 
+* 🤖  **Machine Learning libraries** : Utilizing sklearn to create and train the models.
+* 🌎  **Libraries for deployment** : Streamlit for hosting on the internet and Pyinstaller and Joblib to export as .exe.
+
 
 ## 🎯 Features
 
