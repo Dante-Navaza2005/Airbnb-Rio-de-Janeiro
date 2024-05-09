@@ -108,7 +108,7 @@ On the app page, you can adjust a variety of parameters to estimate the rental p
 ![1713872730244](image/README/1713872730244.png)
 
 3. Double click the run file to execute it.
-4. When done so, a empty terminal screen will appear, **wait** until the file automatically opens the project app into your browser. (If it doesnt automatically open for you, click on the Local URL displayed on the terminal after it finished executing)
+4. When done so, a empty terminal screen will appear, **wait** until the file automatically opens the project app into your browser (It might take up to a minute depending on the device). If the link doesnt automatically open for you, click on the Local URL displayed on the terminal after it finished executing
 
 ![1713872988867](image/README/1713872988867.png)
 
