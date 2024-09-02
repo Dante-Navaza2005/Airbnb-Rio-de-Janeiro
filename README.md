@@ -2,7 +2,7 @@
 <p align="center">
   <i>This machine learning model made in python utilizes supervised learning to predict the daily rental price for Airbnb properties!</i>
   <br/><br/>
-  <img width="100%" alt="Dante" src="https://as2.ftcdn.net/v2/jpg/01/14/16/97/1000_F_114169725_yhNFxBqghdX3ST7taRoW5dq5FJghkPmZ.jpg"/>
+  <img width="100%" alt="Dante" src="https://peace-love-travel.com/wp-content/uploads/2018/10/tips-brazil-rio-de-janeiro-panorama.jpg"/>
   <br/><br/>
   <b><a href="https://drive.google.com/file/d/1P1ckjVeNEzY2vsotrbJ40tccq3k0RTRE/view?usp=sharing">Download .exe folder</a></b> | <b><a href="https://airbnb-rio-de-janeiro.onrender.com/">Wikipedia</a></b> | <b><a href="https://github.com/Dante-Navaza2005">My profile</a></b> | <b><a href="https://www.linkedin.com/in/dante-navaza/">LinkedIn</a></b>
   <br/><br/>
